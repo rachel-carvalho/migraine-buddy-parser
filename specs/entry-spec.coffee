@@ -47,6 +47,8 @@ it 'parses started_at', ->
 
 it 'parses duration', ->
   subject = first_entry()
-  assert.equal subject.duration, '06h 00m'
+  assert.equal subject.duration.hours, 6
+  assert.equal subject.duration.minutes, 0
+  assert.equal subject.duration.formatted, '06h 00m'
 
 finish()

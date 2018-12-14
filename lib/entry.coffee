@@ -21,4 +21,6 @@ module.exports =
       @medication = Medication.parse(@document('td').eq(10).html())
 
       @started_at = new Date(Date.parse(@document('td').eq(1).find('div span').text().trim()))
-      @duration = @document('td').eq(2).text().trim()
+      duration_text = @document('td').eq(2).text().trim()
+      [..., hours, minutes] = duration_text.match(/(\d+)h (\d+)m/i)
+      @duration = hours: parseInt(hours), minutes: parseInt(minutes), formatted: duration_text
