@@ -32,13 +32,13 @@ it 'parses notes', ->
 
 it 'parses medication', ->
   subject = first_entry()
-  assert.ok subject.medication instanceof Array, 'is array'
+  assert.equal subject.medication.length, 2, 'array of 2'
   assert.ok subject.medication[0] instanceof Medication, 'right type'
   assert.equal subject.medication[1].name, 'Sumatriptan'
 
 it 'parses triggers', ->
   subject = first_entry()
-  assert.equal subject.triggers.length, 1
+  assert.equal subject.triggers.length, 1, 'array of 1'
   assert.equal subject.triggers[0], 'Alcohol'
 
 finish()
