@@ -1,0 +1,32 @@
+{
+  "name": "lala",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "10.11.0",
+    "npm": "6.4.1"
+  },
+  "scripts": {},
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "coffee-script": "1.12.7",
+    "dateformat": "3.0.3",
+    "express": "4.16.4",
+    "mailgun-js": "0.22.0",
+    "mongojs": "2.6.0",
+    "pug": "2.0.3",
+    "time": "0.12.0",
+    "time-ago": "0.2.1",
+    "underscore": "1.9.1"
+  },
+  "devDependencies": {
+    "cheerio": "1.0.0-rc.2",
+    "coffeeify": "3.0.1",
+    "google-distance": "1.0.1",
+    "google-places": "0.0.2",
+    "random-useragent": "0.3.1",
+    "stylus": "0.54.5",
+    "superagent": "4.0.0",
+    "watchify": "0.10.2"
+  }
+}
