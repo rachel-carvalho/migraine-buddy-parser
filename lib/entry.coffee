@@ -18,4 +18,4 @@ module.exports =
       @triggers = all_triggers.replace(/menstruation: (yes|no)/i, '').split(',').map (trigger) -> trigger.trim()
       @notes = @document('td').last().text().trim().substring 'Notes: '.length
 
-      @medication = Medication.parse(@document('td').eq(10).text().trim())
+      @medication = Medication.parse(@document('td').eq(10).html())

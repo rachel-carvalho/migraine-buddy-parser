@@ -1,10 +1,12 @@
 { start, it, finish } = require './support/support'
 fs = require 'fs'
 assert = require 'assert'
+_ = require 'underscore'
 
 Medication = require '../lib/medication'
 
 medication_html = fs.readFileSync('specs/fixtures/medication.html').toString()
+medication_mixed_html = fs.readFileSync('specs/fixtures/medication_mixed.html').toString()
 
 start()
 
@@ -30,5 +32,12 @@ it 'parses html', ->
   assert.equal(subject[1].name, 'Sumatriptan')
   assert.equal(subject[1].amount, 1)
   assert.equal(subject[1].helpful, true)
+
+it 'understands mixed helpfulnesss html', ->
+  subject = Medication.parse(medication_mixed_html)
+  helpful = _.any subject, (med) -> med.name == 'Naproxen sodium 550mg Oral' && med.helpful == true
+  assert.ok helpful, 'parses helpful'
+  unhelpful = _.any subject, (med) -> med.name == 'Naproxen 375mg Oral' && med.helpful == false
+  assert.ok unhelpful, 'parses unhelpful'
 
 finish()
