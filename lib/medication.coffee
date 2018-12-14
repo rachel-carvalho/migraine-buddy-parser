@@ -8,7 +8,7 @@ module.exports =
 
       classifications = document('root > div')
 
-      mapping = [['helpful - ', true], ['unhelpful - ', false]]
+      mapping = [['helpful - ', true], ['unhelpful - ', false], ['unsure - ']]
 
       _.flatten classifications.toArray().map (classification) ->
         text = cheerio(classification).text().trim()

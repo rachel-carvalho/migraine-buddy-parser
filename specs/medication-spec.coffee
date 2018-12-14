@@ -7,6 +7,7 @@ Medication = require '../lib/medication'
 
 medication_html = fs.readFileSync('specs/fixtures/medication.html').toString()
 medication_mixed_html = fs.readFileSync('specs/fixtures/medication_mixed.html').toString()
+medication_unsure_html = fs.readFileSync('specs/fixtures/medication_unsure.html').toString()
 
 start()
 
@@ -39,5 +40,10 @@ it 'understands mixed helpfulnesss html', ->
   assert.ok helpful, 'parses helpful'
   unhelpful = _.any subject, (med) -> med.name == 'Naproxen 375mg Oral' && med.helpful == false
   assert.ok unhelpful, 'parses unhelpful'
+
+it 'understands unsure medication', ->
+  subject = Medication.parse(medication_unsure_html)
+  unsure = _.any subject, (med) -> med.name == 'Sumatriptan' && !med.helpful?
+  assert.ok unsure, 'parses unsure'
 
 finish()
