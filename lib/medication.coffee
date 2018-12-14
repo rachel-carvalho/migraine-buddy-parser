@@ -16,7 +16,7 @@ module.exports =
         text = text.substring(label.length)
         text.split(',').map (med) ->
           amount_regexp = /\d+x /i
-          amount = parseInt(med.match(amount_regexp)[0])
+          amount = parseInt(med.match(amount_regexp)?[0] || 1)
           new Medication({name: med.replace(amount_regexp, '').trim(), amount, helpful})
 
     constructor: (options = {}) ->
