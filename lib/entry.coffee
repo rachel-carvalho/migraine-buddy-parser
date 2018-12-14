@@ -1,4 +1,5 @@
 cheerio = require 'cheerio'
+Medication = require './medication'
 
 module.exports =
   class Entry
@@ -10,5 +11,10 @@ module.exports =
     _parse: ->
       @document = cheerio.load('<tr>' + @html + '</tr>', null, false)
 
-      @pain_level = parseInt(@document('td').eq(3).html())
-      @aura = @document('td').eq(7).html().trim().toLowerCase() == 'yes'
+      @pain_level = parseInt(@document('td').eq(3).text().trim())
+      @aura = @document('td').eq(7).text().trim().toLowerCase() == 'yes'
+      all_triggers = @document('td').eq(5).text().trim()
+      @menstruation = all_triggers.toLowerCase().indexOf('menstruation: yes') > -1
+      @notes = @document('td').last().text().trim().substring 'Notes: '.length
+
+      @medication = Medication.parse(@document('td').eq(10).text().trim())
