@@ -15,7 +15,8 @@ module.exports =
       @aura = @document('td').eq(7).text().trim().toLowerCase() == 'yes'
       all_triggers = @document('td').eq(5).text().trim()
       @menstruation = all_triggers.toLowerCase().indexOf('menstruation: yes') > -1
-      @triggers = all_triggers.replace(/menstruation: (yes|no)/i, '').split(',').map (trigger) -> trigger.trim()
+      @triggers = all_triggers.replace(/menstruation: (yes|no)/i, '').replace(/no idea/i, '').split(',').map (trigger) -> trigger.trim()
+      @triggers = [] if @triggers[0].length == 0
       @notes = @document('td').last().text().trim().substring 'Notes: '.length
 
       @medication = Medication.parse(@document('td').eq(10).html())

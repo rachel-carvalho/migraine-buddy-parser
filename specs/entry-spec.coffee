@@ -6,6 +6,7 @@ Entry = require '../lib/entry'
 Medication = require '../lib/medication'
 
 first_entry_html = fs.readFileSync('specs/fixtures/first-entry.html').toString()
+entry_no_idea_html = fs.readFileSync('specs/fixtures/entry_no_idea.html').toString()
 first_entry = -> new Entry(first_entry_html)
 
 start()
@@ -59,5 +60,9 @@ it 'parses pain position', ->
   subject = first_entry()
   assert.equal subject.pain_position.left, true, 'is left'
   assert.equal subject.pain_position.right, false, 'is not right'
+
+it 'handles trigger no idea', ->
+  subject = new Entry(entry_no_idea_html)
+  assert.equal subject.triggers.length, 0, 'no triggers'
 
 finish()
