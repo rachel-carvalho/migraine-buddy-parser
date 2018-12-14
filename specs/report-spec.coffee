@@ -21,5 +21,4 @@ it 'has entries', ->
   assert.equal(subject.entries[0]?.html, first_entry, 'passed entry html to entry')
   assert.equal(subject.entries.length, 185, 'parsed all entries')
 
-
 finish()
