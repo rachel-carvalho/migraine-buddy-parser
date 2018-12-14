@@ -24,3 +24,5 @@ module.exports =
       duration_text = @document('td').eq(2).text().trim()
       [..., hours, minutes] = duration_text.match(/(\d+)h (\d+)m/i)
       @duration = hours: parseInt(hours), minutes: parseInt(minutes), formatted: duration_text
+
+      @ended_at = new Date(@started_at.getFullYear(), @started_at.getMonth(), @started_at.getDate(), @started_at.getHours() + @duration.hours, @started_at.getMinutes() + @duration.minutes)
