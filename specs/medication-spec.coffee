@@ -10,6 +10,7 @@ medication_mixed_html = fs.readFileSync('specs/fixtures/medication_mixed.html').
 medication_unsure_html = fs.readFileSync('specs/fixtures/medication_unsure.html').toString()
 medication_somewhat_helpful_html = fs.readFileSync('specs/fixtures/medication_somewhat_helpful.html').toString()
 medication_implicit_amount_html = fs.readFileSync('specs/fixtures/medication_implicit_amount.html').toString()
+medication_none_html = fs.readFileSync('specs/fixtures/medication_none.html').toString()
 
 start()
 
@@ -57,5 +58,9 @@ it 'understands implicit amounts', ->
   subject = Medication.parse(medication_implicit_amount_html)
   no_amount = _.any subject, (med) -> med.name == 'Tylenol' && med.amount == 1
   assert.ok no_amount, 'no amount == 1x'
+
+it 'understands no medication', ->
+  subject = Medication.parse(medication_none_html)
+  assert.equal subject.length, 0
 
 finish()

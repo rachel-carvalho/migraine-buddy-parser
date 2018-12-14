@@ -12,6 +12,8 @@ module.exports =
 
       _.flatten classifications.toArray().map (classification) ->
         text = cheerio(classification).text().trim()
+        return [] if text.toLowerCase() == 'no medication'
+
         [label, helpful] = mapping.find((mapping) -> text.toLowerCase().indexOf(mapping[0]) == 0)
         text = text.substring(label.length)
         text.split(',').map (med) ->
