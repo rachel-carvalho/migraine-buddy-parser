@@ -55,4 +55,9 @@ it 'calculates end', ->
   subject = first_entry()
   assert.equal subject.ended_at.toJSON(), new Date(2018, 11, 11, 3, 6).toJSON()
 
+it 'parses pain position', ->
+  subject = first_entry()
+  assert.equal subject.pain_position.left, true, 'is left'
+  assert.equal subject.pain_position.right, false, 'is not right'
+
 finish()

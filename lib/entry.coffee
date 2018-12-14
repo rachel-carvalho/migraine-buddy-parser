@@ -26,3 +26,7 @@ module.exports =
       @duration = hours: parseInt(hours), minutes: parseInt(minutes), formatted: duration_text
 
       @ended_at = new Date(@started_at.getFullYear(), @started_at.getMonth(), @started_at.getDate(), @started_at.getHours() + @duration.hours, @started_at.getMinutes() + @duration.minutes)
+
+      @pain_position =
+        left: @document('td').eq(8).text().trim().length > 0
+        right: @document('td').eq(9).text().trim().length > 0
