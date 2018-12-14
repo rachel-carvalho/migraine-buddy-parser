@@ -41,4 +41,8 @@ it 'parses triggers', ->
   assert.equal subject.triggers.length, 1, 'array of 1'
   assert.equal subject.triggers[0], 'Alcohol'
 
+it 'parses started_at', ->
+  subject = first_entry()
+  assert.equal subject.started_at.toJSON(), new Date(2018, 11, 10, 21, 6).toJSON()
+
 finish()

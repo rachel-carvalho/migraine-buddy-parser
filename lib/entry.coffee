@@ -19,3 +19,5 @@ module.exports =
       @notes = @document('td').last().text().trim().substring 'Notes: '.length
 
       @medication = Medication.parse(@document('td').eq(10).html())
+
+      @started_at = new Date(Date.parse(@document('td').eq(1).find('div span').text().trim()))
