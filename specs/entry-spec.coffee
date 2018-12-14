@@ -36,4 +36,9 @@ it 'parses medication', ->
   assert.ok subject.medication[0] instanceof Medication, 'right type'
   assert.equal subject.medication[1].name, 'Sumatriptan'
 
+it 'parses triggers', ->
+  subject = first_entry()
+  assert.equal subject.triggers.length, 1
+  assert.equal subject.triggers[0], 'Alcohol'
+
 finish()
