@@ -45,4 +45,8 @@ it 'parses started_at', ->
   subject = first_entry()
   assert.equal subject.started_at.toJSON(), new Date(2018, 11, 10, 21, 6).toJSON()
 
+it 'parses duration', ->
+  subject = first_entry()
+  assert.equal subject.duration, '06h 00m'
+
 finish()
