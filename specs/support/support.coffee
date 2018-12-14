@@ -1,5 +1,5 @@
 path = require 'path'
-colorize = require './_colorize'
+colorize = require './colorize'
 
 module.exports =
   start: ->

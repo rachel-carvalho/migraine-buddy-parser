@@ -1,4 +1,4 @@
-{ start, it, finish } = require './_support'
+{ start, it, finish } = require './support/support'
 fs = require 'fs'
 assert = require 'assert'
 
