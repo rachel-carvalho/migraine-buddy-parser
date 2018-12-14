@@ -11,4 +11,12 @@ it 'stores entry html', ->
   subject = new Entry(first_entry)
   assert.equal subject.html, first_entry
 
+it 'parses pain level', ->
+  subject = new Entry(first_entry)
+  assert.equal subject.pain_level, 5
+
+it 'parses aura', ->
+  subject = new Entry(first_entry)
+  assert.equal subject.aura, false
+
 finish()
