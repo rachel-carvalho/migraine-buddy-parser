@@ -21,9 +21,9 @@ it 'has entries', ->
   assert.equal(subject.entries[0]?.html, first_entry, 'passed entry html to entry')
   assert.equal(subject.entries.length, 185, 'parsed all entries')
 
-it 'removes html and document from toJSON', ->
+it 'only leaves entries in toJSON', ->
   subject = new Report('crazy html').toJSON()
-  assert.ok(!subject.html?, 'remove html')
-  assert.ok(!subject.document?, 'remove document')
+  assert.equal(Object.keys(subject).length, 1)
+  assert.equal(Object.keys(subject)[0], 'entries')
 
 finish()

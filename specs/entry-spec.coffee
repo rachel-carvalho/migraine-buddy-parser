@@ -65,9 +65,10 @@ it 'handles trigger no idea', ->
   subject = new Entry(entry_no_idea_html)
   assert.equal subject.triggers.length, 0, 'no triggers'
 
-it 'removes html and document from toJSON', ->
+it 'only leaves relevant keys in toJSON', ->
   subject = new Entry(entry_no_idea_html).toJSON()
-  assert.ok(!subject.html?, 'remove html')
-  assert.ok(!subject.document?, 'remove document')
+  assert.equal(Object.keys(subject).length, 10)
+  keys = ['pain_level', 'aura', 'triggers', 'menstruation', 'notes', 'duration', 'medication', 'started_at', 'ended_at', 'pain_position']
+  assert.ok(Object.keys(subject).every((value) -> keys.includes(value)))
 
 finish()

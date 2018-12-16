@@ -8,7 +8,7 @@ module.exports =
       @_parse()
 
     toJSON: ->
-      _.omit(this, 'html', 'document')
+      _.pick(this, 'pain_level', 'aura', 'triggers', 'menstruation', 'notes', 'duration', 'medication', 'started_at', 'ended_at', 'pain_position')
 
     # private
 
