@@ -7,6 +7,7 @@ Medication = require '../lib/medication'
 
 first_entry_html = fs.readFileSync('specs/fixtures/first-entry.html').toString()
 entry_no_idea_html = fs.readFileSync('specs/fixtures/entry_no_idea.html').toString()
+entry_empty_trigger_html = fs.readFileSync('specs/fixtures/entry_empty_trigger.html').toString()
 first_entry = -> new Entry(first_entry_html)
 
 start()
@@ -64,6 +65,11 @@ it 'parses pain position', ->
 it 'handles trigger no idea', ->
   subject = new Entry(entry_no_idea_html)
   assert.equal subject.triggers.length, 0, 'no triggers'
+
+it 'handles empty spaces in trigger', ->
+  subject = new Entry(entry_empty_trigger_html)
+  assert.equal subject.triggers.length, 1, '1 trigger'
+  assert.equal subject.triggers[0], 'Sinus', 'sinus'
 
 it 'only leaves relevant keys in toJSON', ->
   subject = new Entry(entry_no_idea_html).toJSON()

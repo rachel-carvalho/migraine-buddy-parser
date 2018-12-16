@@ -31,9 +31,7 @@ module.exports =
 
     _triggers: ->
       triggers = @_all_triggers().replace(/menstruation: (yes|no)/i, '').replace(/no idea/i, '')
-
-      return [] unless triggers
-      triggers.split(',').map (trigger) -> trigger.trim()
+      _.compact(triggers.split(',').map (trigger) -> trigger.trim())
 
     _duration: ->
       duration_text = @document('td').eq(2).text().trim()
