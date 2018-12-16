@@ -65,4 +65,9 @@ it 'handles trigger no idea', ->
   subject = new Entry(entry_no_idea_html)
   assert.equal subject.triggers.length, 0, 'no triggers'
 
+it 'removes html and document from toJSON', ->
+  subject = new Entry(entry_no_idea_html).toJSON()
+  assert.ok(!subject.html?, 'remove html')
+  assert.ok(!subject.document?, 'remove document')
+
 finish()

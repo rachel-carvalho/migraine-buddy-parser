@@ -1,3 +1,4 @@
+_ = require 'underscore'
 cheerio = require 'cheerio'
 Medication = require './medication'
 
@@ -5,6 +6,9 @@ module.exports =
   class Entry
     constructor: (@html) ->
       @_parse()
+
+    toJSON: ->
+      _.omit(this, 'html', 'document')
 
     # private
 

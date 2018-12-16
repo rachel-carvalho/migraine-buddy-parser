@@ -7,6 +7,9 @@ class Report
   constructor: (@html) ->
     @_parse()
 
+  toJSON: ->
+    _.omit(this, 'html', 'document')
+
   # private
 
   _parse: ->
