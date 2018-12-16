@@ -1,4 +1,5 @@
 fs = require 'fs'
+Report = require './lib/report'
 
 report_path = './input/report.html'
 
