@@ -24,4 +24,20 @@ it 'has an identifier', ->
   subject = new MigraineQC.Month(entries)
   assert.equal subject.identifier, '2018-12'
 
+it 'has days', ->
+  subject = new MigraineQC.Month(entries)
+  assert.equal subject.days.length, 31
+  assert.ok subject.days.every((day) -> day instanceof MigraineQC.Day), 'instance of Day'
+
+  assert.equal subject.days[9].number(), 10
+  assert.equal subject.days[9].entries.length, 1
+  assert.equal subject.days[9].entries[0], first_entry
+
+  assert.equal subject.days[4].number(), 5
+  assert.equal subject.days[4].entries.length, 1
+  assert.equal subject.days[4].entries[0], second_entry
+
+  assert.equal subject.days[30].number(), 31
+  assert.equal subject.days[30].entries.length, 0
+
 finish()
