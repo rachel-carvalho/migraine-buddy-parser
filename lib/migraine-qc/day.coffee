@@ -6,7 +6,10 @@ module.exports =
       @date.getDate()
 
     pain: ->
-      Math.ceil(@_entry().pain_level / 3)
+      level = @_entry().pain_level
+      # cap level at 9
+      level = 9 if level == 10
+      Math.ceil(level / 3)
 
     aura: ->
       @_entry().aura
@@ -29,4 +32,4 @@ module.exports =
       @entries[0]
 
     _medications: ->
-      @medications_cache ||= @_entry().medication
+      @medications_cache ||= @_entry().medication.slice(0, 3)

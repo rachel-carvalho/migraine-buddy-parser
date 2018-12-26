@@ -3,6 +3,7 @@ fs = require 'fs'
 assert = require 'assert'
 
 MigraineQC = require '../../lib/migraine-qc'
+Medication = require '../../lib/medication'
 Entry = require '../../lib/entry'
 
 first_entry_html = fs.readFileSync('specs/fixtures/first-entry.html').toString()
@@ -51,9 +52,24 @@ it 'has effectiveness', ->
   subject = new MigraineQC.Day({date, entries})
   assert.equal subject.effective(), true
 
-# Entry#pain_level 10 == Day#pain 3
-# Day#trigger is only one
-# Day#medication is max 3
+it 'sets pain to 3 when entry has 10', ->
+  first_entry.pain_level = 10
+  subject = new MigraineQC.Day({date, entries})
+  assert.equal subject.pain(), 3
+
+it 'uses first trigger only', ->
+  first_entry.triggers = ['one', 'two']
+  subject = new MigraineQC.Day({date, entries})
+  assert.equal subject.trigger(), 'one'
+
+it 'shows first 3 medications', ->
+  first_entry.medication.push new Medication(name: 'Advil')
+  first_entry.medication.push new Medication(name: 'Tylenol')
+  subject = new MigraineQC.Day({date, entries})
+  assert.equal subject.medications().length, 3
+  assert.equal subject.medications()[0], 'Naproxen sodium 550mg Oral'
+  assert.equal subject.medications()[1], 'Sumatriptan'
+  assert.equal subject.medications()[2], 'Advil'
 
 # multiple entries:
 # pain level is max between entries
