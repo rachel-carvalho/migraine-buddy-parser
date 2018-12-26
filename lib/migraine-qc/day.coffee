@@ -18,7 +18,7 @@ module.exports =
       @entries.some (entry) -> entry.aura
 
     menstruation: ->
-      @_entry().menstruation
+      @entries.some (entry) -> entry.menstruation
 
     trigger: ->
       @_triggers()[0]
