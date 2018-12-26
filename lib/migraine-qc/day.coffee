@@ -6,7 +6,8 @@ module.exports =
       @date.getDate()
 
     pain: ->
-      level = @_entry().pain_level
+      level = Math.max(...@entries.map((e) -> e.pain_level))
+
       # cap level at 9
       level = 9 if level == 10
       Math.ceil(level / 3)

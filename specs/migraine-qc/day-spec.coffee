@@ -7,7 +7,8 @@ Medication = require '../../lib/medication'
 Entry = require '../../lib/entry'
 
 first_entry_html = fs.readFileSync('specs/fixtures/first-entry.html').toString()
-first_entry = new Entry(first_entry_html)
+first_entry = new Entry(first_entry_html.replace('21:06', '10:06'))
+second_entry = new Entry(first_entry_html.replace('"> 5 </td>', '"> 7 </td>'))
 
 date = new Date(2018, 11, 10)
 entries = [first_entry]
@@ -71,8 +72,13 @@ it 'shows first 3 medications', ->
   assert.equal subject.medications()[1], 'Sumatriptan'
   assert.equal subject.medications()[2], 'Advil'
 
+it 'uses max pain level between entries', ->
+  first_entry.pain_level = 5
+  entries = [first_entry, second_entry]
+  subject = new MigraineQC.Day({date, entries})
+  assert.equal subject.pain(), 3
+
 # multiple entries:
-# pain level is max between entries
 # trigger and medications are sum of entries
 
 finish()
