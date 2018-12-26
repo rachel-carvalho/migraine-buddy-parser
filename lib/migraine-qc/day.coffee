@@ -15,7 +15,7 @@ module.exports =
       Math.ceil(level / 3)
 
     aura: ->
-      @_entry().aura
+      @entries.some (entry) -> entry.aura
 
     menstruation: ->
       @_entry().menstruation

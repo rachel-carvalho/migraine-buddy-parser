@@ -84,6 +84,11 @@ it 'joins triggers', ->
   subject = new MigraineQC.Day({date, entries})
   assert.equal subject.trigger(), 'second'
 
+it 'joins auras', ->
+  first_entry.aura = false
+  second_entry.aura = true
+  subject = new MigraineQC.Day({date, entries})
+  assert.equal subject.aura(), true
 
 # multiple entries:
 # trigger and medications are sum of entries
