@@ -16,11 +16,22 @@ it 'saves report', ->
 
 it 'splits entries per month', ->
   subject = new MigraineQC.Renderer(report)
-  assert.equal Object.keys(subject.entries_per_month()).length, 5
-  assert.ok subject.entries_per_month()['2018_12'].length == 3, 'entries in december'
-  assert.ok subject.entries_per_month()['2018_11'].length == 7, 'entries in november'
-  assert.ok subject.entries_per_month()['2018_10'].length == 6, 'entries in october'
-  assert.ok subject.entries_per_month()['2018_9'].length == 5, 'entries in september'
-  assert.ok subject.entries_per_month()['2018_8'].length == 8, 'entries in august'
+  assert.equal subject.months.length, 5
+  assert.ok subject.months.every (month) -> month instanceof MigraineQC.Month
+
+  assert.equal subject.months[0].identifier, '2018-12'
+  assert.equal subject.months[0].entries.length, 3, 'entries in december'
+
+  assert.equal subject.months[1].identifier, '2018-11'
+  assert.equal subject.months[1].entries.length, 7, 'entries in november'
+
+  assert.equal subject.months[2].identifier, '2018-10'
+  assert.equal subject.months[2].entries.length, 6, 'entries in october'
+
+  assert.equal subject.months[3].identifier, '2018-9'
+  assert.equal subject.months[3].entries.length, 5, 'entries in september'
+
+  assert.equal subject.months[4].identifier, '2018-8'
+  assert.equal subject.months[4].entries.length, 8, 'entries in august'
 
 finish()

@@ -1,9 +1,10 @@
 _ = require 'underscore'
+Month = require './month'
 
 module.exports =
-  class MigraineQCRenderer
+  class Renderer
     constructor: (@report) ->
-
-    entries_per_month: ->
-      @entries_per_month_cache ||= _.groupBy @report.entries, (entry) ->
-        "#{entry.started_at.getFullYear()}_#{entry.started_at.getMonth() + 1}"
+      @months = _.chain(@report.entries)
+        .groupBy (entry) -> Month.identify_month(entry)
+        .map (entries) -> new Month(entries)
+        .value()
