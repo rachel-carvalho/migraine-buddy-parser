@@ -31,11 +31,10 @@ module.exports =
 
     # private
 
-    _entry: ->
-      @entries[0]
-
     _triggers: ->
       @triggers_cache ||= _.flatten @entries.map (entry) -> entry.triggers
 
     _medications: ->
-      @medications_cache ||= @_entry().medication.slice(0, 3)
+      @medications_cache ||= _
+        .flatten @entries.map (entry) -> entry.medication
+        .slice(0, 3)

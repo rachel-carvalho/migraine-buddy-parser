@@ -96,7 +96,14 @@ it 'joins menstruations', ->
   subject = new MigraineQC.Day({date, entries})
   assert.equal subject.menstruation(), true
 
-# multiple entries:
-# trigger and medications are sum of entries
+it 'joins medications', ->
+  first_entry.medication.pop()
+  first_entry.medication.pop()
+  second_entry.medication = [new Medication(name: 'Novalgin'), new Medication(name: 'Tylenol')]
+  subject = new MigraineQC.Day({date, entries})
+  assert.equal subject.medications().length, 3
+  assert.equal subject.medications()[0], 'Naproxen sodium 550mg Oral'
+  assert.equal subject.medications()[1], 'Sumatriptan'
+  assert.equal subject.medications()[2], 'Novalgin'
 
 finish()
