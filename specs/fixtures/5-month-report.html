@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+  <title>Migraine Listing</title>
+  <style type="text/css">
+
+* {
+    padding: 0;
+    margin: 0;
+    color: #3f798c;
+    font-family: 'Asap', sans-serif;
+}
+.main-header {
+    margin: 1em auto 0 auto;
+    max-width: 1024px;
+    box-sizing: border-box;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header img {
+    vertical-align: middle;
+}
+
+/* Legend */
+.main-header .icon {
+    margin: auto 0px;
+}
+
+.main-header img {
+    vertical-align: middle;
+    padding-right: 50px;
+}
+
+/* Table CSS */
+
+#overview {
+    max-width: 400px;
+    margin: 1em auto 0 auto;
+    padding:10px;
+
+    -moz-border-radius-bottomleft:3px;
+    border-bottom-left-radius:3px;
+
+    -moz-border-radius-bottomright:3px;
+    border-bottom-right-radius:3px;
+
+    -moz-border-radius-topright:3px;
+    border-top-right-radius:3px;
+
+    -moz-border-radius-topleft:3px;
+    border-top-left-radius:3px;
+
+    -webkit-print-color-adjust: exact;
+}
+
+
+#overview table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width:100%;
+    margin:0px;
+    padding:0px;
+    border:1px solid #c3d8d8;
+    background-color:#ffffff;
+}
+
+#overview tr {
+    width: 100%;
+}
+
+#overview td {
+    vertical-align:middle;
+    border:1px solid #c3d8d8;
+    border-width:0px 1px 1px 0px;
+    text-align:center;
+    padding:4px;
+    font-size:12px;
+    color:#0b2730;
+    max-width: 150px;
+}
+
+#overview right-border {
+    border-width:0px 1px 0px 0px;
+}
+
+#overview bottom-border {
+    border-width:0px 0px 1px 0px;
+}
+
+#overview bottom-left-border {
+    border-width:0px 0px 1px 1px;
+}
+
+#overview .header-overview td {
+    background-color:#3f798c;
+    border:0px solid #c3d8d8;
+    text-align:center;
+    font-size:12px;
+    border-width:0px 0px 1px 1px;
+    font-weight:bold;
+    color:#ffffff;
+}
+
+#overview tbody tr {
+    height: 0px;
+}
+
+
+
+.reports-table {
+    margin: 1em auto 0 auto;
+    padding:10px;
+    min-width: 1024px;
+    width: 85%;
+
+    -moz-border-radius-bottomleft:3px;
+    border-bottom-left-radius:3px;
+
+    -moz-border-radius-bottomright:3px;
+    border-bottom-right-radius:3px;
+
+    -moz-border-radius-topright:3px;
+    border-top-right-radius:3px;
+
+    -moz-border-radius-topleft:3px;
+    border-top-left-radius:3px;
+
+    -webkit-print-color-adjust: exact;
+}
+
+
+.reports-table table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width:100%;
+    margin:0px;
+    padding:0px;
+    border:1px solid #c3d8d8;
+    background-color:#ffffff;
+}
+
+.reports-table tr {
+    width: 100%;
+}
+
+.reports-table td {
+    vertical-align:middle;
+    border:1px solid #c3d8d8;
+    border-width:0px 1px 1px 0px;
+    text-align:center;
+    padding:4px;
+    font-size:12px;
+    color:#0b2730;
+    max-width: 150px;
+}
+
+.reports-table right-border {
+    border-width:0px 1px 0px 0px;
+}
+
+.reports-table bottom-border {
+    border-width:0px 0px 1px 0px;
+}
+
+.reports-table bottom-left-border {
+    border-width:0px 0px 1px 1px;
+}
+
+.reports-table .header td {
+    background-color:#3f798c;
+    border:0px solid #c3d8d8;
+    text-align:center;
+    font-size:12px;
+    border-width:0px 0px 1px 1px;
+    font-weight:bold;
+    color:#ffffff;
+}
+
+.reports-table thead subheading {
+    background-color:#5fa6be;
+}
+
+.reports-table thead subheading td{
+    color:#fff;
+}
+
+.reports-table tbody tr {
+    height: 0px;
+}
+
+.reports-table tr td div.helpful{
+    color:#02921a;
+}
+
+.reports-info {
+    margin: 1em auto 0 auto;
+    padding:10px;
+    min-width: 1024px;
+    width: 85%;
+}
+
+.notes {
+    text-align: left !important;
+    padding-bottom: 15px !important;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+.relief-methods {
+    margin-top : 10px;
+}
+
+#printButton button {
+    border: none;
+    background: none;
+}
+
+
+@media print {
+    table { page-break-inside: auto; }
+    tr    { page-break-inside: avoid; page-break-after: auto; }
+    thead { display: table-header-group; }
+    #printButton { display: none; }
+    @page { size: landscape }
+}
+
+
+
+</style>
+  <link href="https://fonts.googleapis.com/css?family=Asap:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+  <style>
+    </style>
+ </head>
+ <body style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+  <div class="main-header" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin:1em auto 0 auto;max-width:1024px;box-sizing:border-box;margin-top:15px;margin-bottom:20px;display:flex;justify-content:flex-start">
+   <div class="legend" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+    <img src="http://s3-ap-southeast-1.amazonaws.com/migraine-buddy-marketing/emails_assets/mb-inline-compact-double.png" width="250" alt="Migraine Buddy logo" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;padding-right:50px">
+   </div>
+  </div>
+  <div class="reports-info" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin:1em auto 0 auto;padding:10px;min-width:1024px;width:85%">
+   <table style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+    <tbody style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Time Period: </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">8/2/18 - 12/14/18</b> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Attack Type: </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">All</b> </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <center style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+   <div class="overview-table" id="overview" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;max-width:400px;margin:1em auto 0 auto;padding:10px;-moz-border-radius-bottomleft:3px;border-bottom-left-radius:3px;-moz-border-radius-bottomright:3px;border-bottom-right-radius:3px;-moz-border-radius-topright:3px;border-top-right-radius:3px;-moz-border-radius-topleft:3px;border-top-left-radius:3px;-webkit-print-color-adjust:exact">
+    <table style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;border-collapse:collapse;border-spacing:0;width:100%;margin:0px;padding:0px;border:1px solid rgb(195, 216, 216);background-color:rgb(255, 255, 255)">
+     <thead class="header-overview" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+      <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%">
+       <td class="bottom-border" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Number of Attacks</td>
+       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Attack Days</td>
+       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Attack-Free Days</td>
+       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Avg Attack Duration</td>
+      </tr>
+     </thead>
+     <tbody style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+      <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">xxx</td>
+       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">xxx</td>
+       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">xxx</td>
+       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">13h 10m</td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </center>
+  <div class="reports-table" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin:1em auto 0 auto;padding:10px;min-width:1024px;width:85%;-moz-border-radius-bottomleft:3px;border-bottom-left-radius:3px;-moz-border-radius-bottomright:3px;border-bottom-right-radius:3px;-moz-border-radius-topright:3px;border-top-right-radius:3px;-moz-border-radius-topleft:3px;border-top-left-radius:3px;-webkit-print-color-adjust:exact">
+   <table style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;border-collapse:collapse;border-spacing:0;width:100%;margin:0px;padding:0px;border:1px solid rgb(195, 216, 216);background-color:rgb(255, 255, 255)">
+    <thead class="header" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%">
+      <td rowspan="2" class="bottom-border" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">#</td>
+      <td rowspan="2" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Started</td>
+      <td rowspan="2" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Lasted</td>
+      <td rowspan="2" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Pain Level</td>
+      <td rowspan="2" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Affected Activities</td>
+      <td rowspan="2" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)"> Potential Triggers <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">(including menstruations) </td>
+      <td rowspan="2" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Symptoms</td>
+      <td rowspan="2" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Auras</td>
+      <td colspan="2" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Pain Positions</td>
+      <td rowspan="2" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Medication</td>
+      <td rowspan="2" class="bottom-left-border" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)"> Non Drug Relief Methods </td>
+     </tr>
+     <tr class="subheading" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%">
+      <td width="7%" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Left</td>
+      <td width="7%" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;background-color:rgb(63, 121, 140);border:0px solid rgb(195, 216, 216);text-align:center;font-size:12px;border-width:0px 0px 1px 1px;font-weight:bold;color:rgb(255, 255, 255)">Right</td>
+     </tr>
+    </thead>
+    <tbody style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">1</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 12/10/18 21:06 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Out
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 06h 00m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Woke up during sleep </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Alcohol <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving, Throbbing pain </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unhelpful</b> - Sleep
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Dec 11, 2018 at 01:45: I took this drug:  sumatriptan</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">2</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 12/9/18 20:21 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Out
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 11h 49m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at home] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Rebound headache, Alcohol <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Throbbing pain, Worse pain if moving </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unhelpful</b> - Hot shower
+       </div>
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - Sleep
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Dec 10, 2018 at 00:22: I took this drug:  sumatriptan</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">3</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 12/9/18 04:13 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 05h 26m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Woke up during sleep </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Dehydration, Sinus <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse lying down, Sensitivity to light, Worse pain if moving </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple, Left Eye </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Dec 9, 2018 at 04:45: I took this drug:  sumatriptan
+Dec 9, 2018 at 09:39: This symptom stopped:  headache (I woke up without it)</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">4</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 11/24/18 22:40 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Out
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 03h 09m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Not affected </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Pounding pain, Worse pain if moving, Sensitivity to light </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Nov 24, 2018 at 11:00 PM: I took this drug:  sumatriptan</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">5</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 11/21/18 14:56 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Work
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 20h 36m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 4 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at work] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Throbbing pain </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 2x Naproxen sodium 550mg Oral, 2x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Nov 21, 2018 at 5:57 PM: I took this drug:  sumatriptan
+Nov 21, 2018 at 7:52 PM no more symptoms?
+
+started pain again during night
+
+Nov 22, 2018 at 9:54 AM: I took this drug:  sumatriptan
+
+Nov 22, 2018 at 11:04 AM no more symptoms?</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">6</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 11/20/18 19:14 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Out
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 09h 04m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Missed family time </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving, Sensitivity to light </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Nov 20, 2018 at 9:15 PM: I took this drug:  sumatriptan</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">7</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 11/13/18 05:35 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 08h 28m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 6 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Woke up during sleep, Slower [at work] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving, Sensitivity to light, Throbbing pain </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Nov 13, 2018 at 11:36 AM: I took this drug:  sumatriptan</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">8</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 11/7/18 08:04 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 12h 00m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 6 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at work] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Throbbing pain, Worse pain if moving, Sensitivity to light </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Nov 7, 2018 at 12:05 PM: Pain is level:  3
+
+Nov 7, 2018 at 4:14 PM: I took this drug: sumatriptan</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">9</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 11/6/18 08:00 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 07h 10m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 4 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at work] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sinus <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving, Sensitivity to light </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unhelpful</b> - Drink water
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Nov 6, 2018 at 12:02 PM: I took this drug:  sumatriptan</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">10</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 11/2/18 18:22 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Out
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 17h 38m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 7 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Woke up during sleep </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Alcohol <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving, Sensitivity to light </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple, Left Eye </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unhelpful</b> - Pot, High head rest
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Pain level 2-3 when left work
+
+Took Stars 3ml around 7pm
+
+Had to sleep
+
+Nov 3, 2018 at 6:25 AM: Pain increased to level:  5
+
+Nov 3, 2018 at 9:26 AM: Pain increased to level:  7
+
+Nov 3, 2018 at 9:26 AM: I took this drug:  sumatriptan</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">11</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 10/30/18 22:11 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Home
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 21h 05m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at work] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea, Sinus <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Worse pain if moving </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> started really low at 1 or 2
+
+in the morning it was still there
+
+Oct 31, 2018 at 12:14 PM: Pain increased to level:  5
+Oct 31, 2018 at 12:14 PM: I took my drug sumatriptan
+Oct 31, 2018 at 1:19 PM: Pain moved left
+Oct 31, 2018 at 1:19 PM: Pain decreased to level:  3</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">12</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 10/29/18 20:57 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Home
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 05h 16m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Not affected </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Throbbing pain </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Eye, Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div>
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unhelpful</b> - 1x Naproxen 375mg Oral
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> 9:33 Pain not in temple, but in eye socket
+
+Oct 29, 2018 at 9:33 PM: I took my drug naproxen
+Oct 29, 2018 at 11:17 PM: paim increased to 5, I took my drug sumatriptan</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">13</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 10/19/18 17:11 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Out
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 06h 56m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 3 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Could not fall asleep, Slower [at home] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Worse pain if moving </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Oct 19, 2018 at 10:13 PM: I took my drug
+Oct 20, 2018 at 12:07 AM: Feeling no more headache</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">14</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 10/16/18 05:54 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 06h 46m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 4 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Missed work </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sinus </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse lying down, Worse pain if moving, Throbbing pain </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Woke me up </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple, Left Front Head, Left Eye </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Somewhat Helpful</b> - Sleep
+       </div>
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - Drink water, Eye mask, Sinus rinse
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> triggered by cold/flu/sinus
+
+Oct 16, 2018 at 7:57 AM: I took my drug</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">15</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 10/10/18 07:52 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 10h 23m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 3 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at work], Slower [at home] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Worse lying down, Worse pain if moving </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Woke me up </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - Hot shower, Drink water
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Oct 10, 2018 at 5:28 PM: I took my drug
+Oct 10, 2018 at 6:15 PM: Feeling no more headache</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">16</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 10/6/18 16:33 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Out
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 06h 26m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at home] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Alcohol </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - Drink water
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Oct 6, 2018 at 6:33 PM: I took my drug</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">17</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 9/27/18 16:09 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Work
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 20h 51m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at home], Woke up during sleep, Missed work </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving, Sensitivity to light </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Sep 27, 2018 at 5:12 PM: Pain increased to level:  1
+Sep 28, 2018 at 7:40 AM: Pain increased to level:  4
+Sep 28, 2018 at 8:00 AM: Pain moved right
+Sep 28, 2018 at 8:13 AM: I took my drug
+Sep 28, 2018 at 9:41 AM feeling better
+Sep 28, 2018 at 9:41 AM: Feeling side effect from drug groggy</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">18</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 9/26/18 18:04 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Out
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 10h 04m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at home] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sinus </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving, Sensitivity to light </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 2x Naproxen sodium 550mg Oral, 2x Sumatriptan
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Sep 26, 2018 at 9:07 PM: I took my drug
+Sep 26, 2018 at 11:08 PM: I took my drug
+Sep 27, 2018 at 4:08 AM: Feeling no more headache</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">19</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 9/18/18 21:30 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Home
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 24h 39m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Could not fall asleep </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sinus </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Worse pain if moving, Worse lying down </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple, Left Front Head </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple, Right Front Head </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Helpful</b> - 1x Naproxen sodium 550mg Oral, 1x Sumatriptan
+       </div>
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Advil, 1x Tylenol
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - Sleep, Sinus rinse
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Sep 18, 2018 at 11:49 PM: I took my drug advil and tylenol
+Sep 19, 2018 at 1:51 PM: Pain moved right
+Sep 19, 2018 at 6:49 PM: Pain increased to level:  5
+Sep 19, 2018 at 8:44 PM: I took my drug sumatriptan and naproxen
+
+Sep 19, 2018 at 9:59 PM: Feeling no more headache?
+
+Sep 19, 2018 at 10:09 PM: Feeling side effect from drug sore throat?</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">20</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 9/12/18 13:08 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Work
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 57h 27m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 7 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Missed family time, Slower [at work] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Dehydration, Interrupted sleep, Sinus </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Worse pain if moving </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 3x Advil, 3x Tylenol
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - Caffeine
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Sep 12, 2018 at 2:08 PM: I took my drug
+Sep 12, 2018 at 11:20 PM: I took my drug</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">21</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 9/6/18 15:05 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Home
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 16h 24m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 4 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Missed family time </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Nap </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving, Sensitivity to light, Teary eyes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple, Left Front Head </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Front Head </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Advil, 1x Tylenol
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> </pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">22</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 8/30/18 08:28 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 25h 10m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 4 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at home], Slower [at work] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Rebound headache, Sinus <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving, Nasal congestion, Sensitivity to light </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 2x Advil, 2x Tylenol
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - Caffeine
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Aug 30, 2018 at 10:00 AM: I took my drug
+Aug 30, 2018 at 5:00 PM: Feeling no more headache
+Aug 31, 2018 at 12:01 AM: Pain spread to both sides
+Aug 31, 2018 at 12:01 AM: I took my drug
+Aug 31, 2018 at 8:00 PM: Pain restarted during sleep
+Aug 31, 2018 at 9:40 PM pain stopped, coffee seems to have helped</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">23</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 8/29/18 08:41 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 08h 31m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 4 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at work], Slower [at home] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Lack of sleep, Sinus <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Nasal congestion, Sensitivity to light </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Advil, 1x Tylenol
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - Caffeine
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Aug 29, 2018 at 1:43 PM: I took my drug</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">24</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 8/22/18 19:26 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Home
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 17h 44m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 7 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Woke up during sleep, Missed work </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Dehydration, Sinus </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse lying down, Throbbing pain, Nausea, Worse pain if moving, Diarrhea, Sensitivity to light, Nasal congestion </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Between Eyes, Left Eye </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Eye, Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Maxalt, 2x Tylenol
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - Hot tea, Sleep, High head rest
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Aug 23, 2018 at 5:23 AM: Migraine started during sleep
+Aug 23, 2018 at 5:28 AM: I took my drug maxalt, hot tea
+Aug 23, 2018 at 6:40 AM: 2x tylenol, bathroom</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">25</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 8/21/18 13:18 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Work
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 04h 33m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 3 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at work] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Worse pain if moving </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Advil, 1x Tylenol
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - Caffeine
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> </pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">26</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 8/20/18 07:59 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 09h 01m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 2 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at home] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Hungry </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving, Sensitivity to light </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Advil, 1x Tylenol
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Aug 20, 2018 at 9:01 AM: I took my drug</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">27</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 8/9/18 08:13 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 07h 00m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 2 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at work] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Tylenol
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> </pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">28</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 8/8/18 08:15 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 11h 08m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 8 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No screen / Phone </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Teary eyes, Worse pain if moving </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Advil, 1x Maxalt, 1x Tylenol
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+         No relief
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Aug 8, 2018 at 9:45 AM pain is just present, I took no drug, will avoid reading in the bus
+
+Aug 8, 2018 at 10:31 AM: Pain increased to level:  3
+
+Aug 8, 2018 at 11:26 AM: Pain increased to level:  6
+Aug 8, 2018 at 11:26 AM: I took my drug maxalt
+
+Aug 8, 2018 at 12:49 PM: Pain increased to level:  8
+
+Aug 8, 2018 at 3:47 PM: Pain decreased to level:  5 after rest and fan to face
+
+Aug 8, 2018 at 4:00 PM: I took my drug tylenol and advil
+
+Aug 8, 2018 at 7:00 PM: Feeling no more headache</pre> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">29</td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div style="align:center;padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+        <span style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> 8/2/18 08:11 </span>
+        <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Location:
+        <div style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">
+          Bed (at Home)
+        </div>
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 44h 20m </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 9 </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Woke up during sleep, Slower [at home] </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Stress, Rebound headache, Sinus <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Soon </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Nausea, Worse pain if moving, Teary eyes, Pulsating pain, Sensitivity to smell, Vomiting, Nasal congestion, Sensitivity to light </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Woke me up </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Right Temple </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - 1x Rizatriptan 10mg Oral, 1x Advil, 1x Maxalt, 1x Tylenol
+       </div> </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px">
+       <div class="relief-methods" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;margin-top:10px">
+        <b style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Unsure</b> - Sinus rinse
+       </div> </td>
+     </tr>
+     <tr style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;width:100%;height:0px">
+      <td colspan="12" class="notes" style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:0px 1px 1px 0px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px;text-align:left;padding-bottom:15px"> <pre style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;white-space:pre-wrap"><strong style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif">Notes:</strong> Aug 2, 2018 at 12:24 PM: I took my drug rizatriptan
+Aug 3, 2018 at 6:28 PM maxalt
+Aug 3, 2018 at 7:00 PM: Pain increased to level:  9
+Aug 3, 2018 at 8:00 PM: vomit, didn’t help
+Aug 3, 2018 at 8:54 PM: took tylenol and advil
+Aug 4, 2018 at 4:31 AM: Headache ended(?) during sleep</pre> </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+ </body>
+</html>
