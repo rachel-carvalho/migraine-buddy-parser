@@ -78,6 +78,13 @@ it 'uses max pain level between entries', ->
   subject = new MigraineQC.Day({date, entries})
   assert.equal subject.pain(), 3
 
+it 'joins triggers', ->
+  first_entry.triggers = []
+  second_entry.triggers = ['second']
+  subject = new MigraineQC.Day({date, entries})
+  assert.equal subject.trigger(), 'second'
+
+
 # multiple entries:
 # trigger and medications are sum of entries
 

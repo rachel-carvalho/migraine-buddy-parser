@@ -1,3 +1,5 @@
+_ = require 'underscore'
+
 module.exports =
   class Day
     constructor: ({@date, @entries}) ->
@@ -19,7 +21,7 @@ module.exports =
       @_entry().menstruation
 
     trigger: ->
-      @_entry().triggers[0]
+      @_triggers()[0]
 
     medications: ->
       @_medications().map (medication) -> medication.name
@@ -31,6 +33,9 @@ module.exports =
 
     _entry: ->
       @entries[0]
+
+    _triggers: ->
+      @triggers_cache ||= _.flatten @entries.map (entry) -> entry.triggers
 
     _medications: ->
       @medications_cache ||= @_entry().medication.slice(0, 3)
