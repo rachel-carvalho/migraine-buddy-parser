@@ -8,6 +8,8 @@ module.exports =
       @date.getDate()
 
     pain: ->
+      return unless @entries.length
+
       level = Math.max(...@entries.map((e) -> e.pain_level))
 
       # cap level at 9
@@ -15,9 +17,11 @@ module.exports =
       Math.ceil(level / 3)
 
     aura: ->
+      return unless @entries.length
       @entries.some (entry) -> entry.aura
 
     menstruation: ->
+      return unless @entries.length
       @entries.some (entry) -> entry.menstruation
 
     trigger: ->
@@ -27,6 +31,7 @@ module.exports =
       @_medications().map (medication) -> medication.name
 
     effective: ->
+      return unless @entries.length
       @_medications().some (medication) -> medication.helpful
 
     # private

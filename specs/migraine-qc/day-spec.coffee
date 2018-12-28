@@ -106,4 +106,13 @@ it 'joins medications', ->
   assert.equal subject.medications()[1], 'Sumatriptan'
   assert.equal subject.medications()[2], 'Novalgin'
 
+it 'returns undefined for all methods when there are no entries', ->
+  subject = new MigraineQC.Day({date, entries: []})
+  assert.equal subject.pain(), undefined, 'pain'
+  assert.equal subject.aura(), undefined, 'aura'
+  assert.equal subject.menstruation(), undefined, 'menstruation'
+  assert.equal subject.trigger(), undefined, 'trigger'
+  assert.equal subject.medications().length, 0, 'medications'
+  assert.equal subject.effective(), undefined, 'effective'
+
 finish()
