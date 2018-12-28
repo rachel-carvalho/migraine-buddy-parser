@@ -24,6 +24,10 @@ it 'has an identifier', ->
   subject = new MigraineQC.Month(entries)
   assert.equal subject.identifier, '2018-12'
 
+it 'has title', ->
+  subject = new MigraineQC.Month(entries)
+  assert.equal subject.title, 'Dec 2018'
+
 it 'has days', ->
   subject = new MigraineQC.Month(entries)
   assert.equal subject.days.length, 31

@@ -7,6 +7,7 @@ module.exports =
 
     constructor: (@entries) ->
       @identifier = Month.identify_month @entries[0]
+      @title = @entries[0].started_at.toDateString().replace(/^\w{3} /, '').replace(/ \d{1,2} /, ' ')
       @days = @_days(@entries[0].started_at)
 
     # private
