@@ -5,15 +5,21 @@ html
     title Calendar
 
     style.
-      body { font-family: sans-serif; }
+      body { font-family: sans-serif; box-sizing: border-box; }
+      body * { box-sizing: inherit; }
       table { border-collapse: collapse; }
-      table, th, td { border: 1px solid black; }
+      table, th, td { border: 1px solid #999; }
       p { margin: 0; }
 
       tr:nth-child(even) { background-color: #eee; }
-      thead tr { background-color: #000; color: #fff; }
+      thead tr { background-color: #fff; }
+      th, td { padding: 3px; }
+      thead th { background-color: #000; color: #fff; border-color: #000; }
       th { font-size: smaller; }
-      thead th { padding: 3px; }
+
+      tbody td { color: #00c; text-align: center; min-width: 22px }
+      tbody th { font-weight: normal; }
+      tbody th strong { display: block; }
 
   body
     each month in months
@@ -23,15 +29,15 @@ html
         table
           thead
             tr
-              th
+              td
               each day in month.days
                 th #{day.number()}
 
           tbody
             tr
               th
-                p Céphalée
-                | 1 2 3
+                | Céphalée
+                strong 1 2 3
               each day in month.days
                 td= day.pain()
 
@@ -40,4 +46,38 @@ html
               each day in month.days
                 td
                   if day.aura()
-                    | X
+                    | ✓
+
+            tr
+              th Règles
+              each day in month.days
+                td
+                  if day.menstruation()
+                    | ✓
+
+            tr
+              th Déclencheur
+              each day in month.days
+                td= (day.trigger() || '')[0]
+
+            tr
+              th Traitement
+              each day in month.days
+                td= (day.medications()[0] || '')[0]
+
+            tr
+              th Traitement
+              each day in month.days
+                td= (day.medications()[1] || '')[0]
+
+            tr
+              th Traitement
+              each day in month.days
+                td= (day.medications()[2] || '')[0]
+
+            tr
+              th Effet du traitement
+              each day in month.days
+                td
+                  if day.effective()
+                    | ✓
