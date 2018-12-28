@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    title Calendar
+
+    style.
+      body { font-family: sans-serif; }
+      table { border-collapse: collapse; }
+      table, th, td { border: 1px solid black; }
+      p { margin: 0; }
+
+      tr:nth-child(even) { background-color: #eee; }
+      thead tr { background-color: #000; color: #fff; }
+      th { font-size: smaller; }
+      thead th { padding: 3px; }
+
+  body
+    each month in months
+      section(id="month-" + month.identifier)
+        h1= month.title
+
+        table
+          thead
+            tr
+              th
+              each day in month.days
+                th #{day.number()}
+
+          tbody
+            tr
+              th
+                p Céphalée
+                | 1 2 3
+              each day in month.days
+                td= day.pain()
+
+            tr
+              th Aura
+              each day in month.days
+                td
+                  if day.aura()
+                    | X

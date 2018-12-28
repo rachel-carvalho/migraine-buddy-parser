@@ -14,6 +14,7 @@
     "assert": "^1.4.1",
     "cheerio": "^1.0.0-rc.2",
     "coffeescript": "^2.3.2",
+    "pug": "^2.0.3",
     "underscore": "^1.9.1"
   }
 }

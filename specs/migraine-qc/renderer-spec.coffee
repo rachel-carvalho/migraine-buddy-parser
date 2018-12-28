@@ -39,4 +39,17 @@ it 'splits entries per month', ->
   assert.equal subject.months[4].entries.length, 8, 'entries in august'
   assert.equal subject.months[4].days.length, 31, 'days in august'
 
+it 'renders html', ->
+  subject = new MigraineQC.Renderer(report).render()
+  assert.ok subject.includes('id="month-2018-12"'), 'december month div'
+  assert.ok subject.includes('Dec 2018'), 'december month text'
+  assert.ok subject.includes('id="month-2018-11"'), 'november month div'
+  assert.ok subject.includes('Nov 2018'), 'november month text'
+  assert.ok subject.includes('id="month-2018-10"'), 'october month div'
+  assert.ok subject.includes('Oct 2018'), 'october month text'
+  assert.ok subject.includes('id="month-2018-9"'), 'september month div'
+  assert.ok subject.includes('Sep 2018'), 'september month text'
+  assert.ok subject.includes('id="month-2018-8"'), 'august month div'
+  assert.ok subject.includes('Aug 2018'), 'august month text'
+
 finish()
