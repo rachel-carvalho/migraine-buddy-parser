@@ -6,9 +6,13 @@ module.exports =
   class Renderer
     constructor: (@report) ->
       reducer = (all, entry) ->
-        month = Month.identify_month(entry.started_at)
-        all[month] ||= []
-        all[month].push entry
+        days_months = {}
+        entry.days.forEach (day) ->
+          month = Month.identify_month(day)
+          unless days_months[month]
+            all[month] ||= []
+            all[month].push entry
+            days_months[month] = true
         all
 
       per_month = @report.entries.reduce reducer, {}
