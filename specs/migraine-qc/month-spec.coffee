@@ -30,6 +30,13 @@ it 'has title', ->
   subject = new MigraineQC.Month({date, entries})
   assert.equal subject.title, 'Dec 2018'
 
+it 'has medication', ->
+  subject = new MigraineQC.Month({date, entries})
+  expected = ['Naproxen sodium 550mg', 'Sumatriptan']
+  expected.sort()
+  assert.equal subject.medication.length, 2
+  assert.equal JSON.stringify(subject.medication), JSON.stringify(expected)
+
 it 'has days', ->
   subject = new MigraineQC.Month({date, entries})
   assert.equal subject.days.length, 31

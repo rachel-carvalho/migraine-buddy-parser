@@ -21,6 +21,9 @@ html
       tbody th { font-weight: normal; }
       tbody th strong { display: block; }
 
+      .medication, .triggers { font-size: smaller; margin-top: 10px; color: #00c; }
+      .medication strong, .triggers strong { color: #000; }
+
   body
     each month in months
       section(id="month-" + month.identifier)
@@ -81,3 +84,7 @@ html
                 td
                   if day.effective()
                     | ✓
+
+        p.medication
+          strong Traitements:
+          = ' ' + month.medication.join(', ') + '.'
