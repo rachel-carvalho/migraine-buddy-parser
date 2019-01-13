@@ -7,8 +7,9 @@ Entry = require '../../lib/entry'
 
 first_entry_html = fs.readFileSync('specs/fixtures/first-entry.html').toString()
 first_entry = new Entry(first_entry_html)
-second_entry = new Entry(first_entry_html.replace('12/10/18', '12/5/18'))
-entries = [first_entry, second_entry]
+second_entry = new Entry(first_entry_html.replace('12/10/18 21:06', '12/5/18 12:15'))
+third_entry = new Entry(first_entry_html.replace('12/10/18', '12/20/18').replace('06h 00m', '30h 00m'))
+entries = [first_entry, second_entry, third_entry]
 
 start()
 
@@ -33,15 +34,19 @@ it 'has days', ->
   assert.equal subject.days.length, 31
   assert.ok subject.days.every((day) -> day instanceof MigraineQC.Day), 'instance of Day'
 
-  assert.equal subject.days[9].number(), 10
-  assert.equal subject.days[9].entries.length, 1
-  assert.equal subject.days[9].entries[0], first_entry
+  dates_with_entries =
+    10: first_entry
+    11: first_entry
+    5: second_entry
+    20: third_entry
+    21: third_entry
+    22: third_entry
 
-  assert.equal subject.days[4].number(), 5
-  assert.equal subject.days[4].entries.length, 1
-  assert.equal subject.days[4].entries[0], second_entry
-
-  assert.equal subject.days[30].number(), 31
-  assert.equal subject.days[30].entries.length, 0
+  subject.days.forEach (day, index) ->
+    entry = dates_with_entries[index + 1]
+    length = if entry then 1 else 0
+    assert.equal day.number(), index + 1, "day #{day.number()} should be #{index + 1}"
+    assert.equal day.entries.length, length, "day #{day.number()} should have #{length} items instead of #{day.entries.length}"
+    assert.equal day.entries[0], entry, "day #{day.number()}'s entry should be #{entry}"
 
 finish()
