@@ -2,13 +2,13 @@ Day = require './day'
 
 module.exports =
   class Month
-    @identify_month: (entry) ->
-      "#{entry.started_at.getFullYear()}-#{entry.started_at.getMonth() + 1}"
+    @identify_month: (date) ->
+      "#{date.getFullYear()}-#{date.getMonth() + 1}"
 
-    constructor: (@entries) ->
-      @identifier = Month.identify_month @entries[0]
-      @title = @entries[0].started_at.toDateString().replace(/^\w{3} /, '').replace(/ \d{1,2} /, ' ')
-      @days = @_days(@entries[0].started_at)
+    constructor: ({@date, @entries}) ->
+      @identifier = Month.identify_month @date
+      @title = @date.toDateString().replace(/^\w{3} /, '').replace(/ \d{1,2} /, ' ')
+      @days = @_days(@date)
 
     # private
 

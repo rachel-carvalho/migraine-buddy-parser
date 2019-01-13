@@ -10,27 +10,28 @@ first_entry = new Entry(first_entry_html)
 second_entry = new Entry(first_entry_html.replace('12/10/18 21:06', '12/5/18 12:15'))
 third_entry = new Entry(first_entry_html.replace('12/10/18', '12/20/18').replace('06h 00m', '30h 00m'))
 entries = [first_entry, second_entry, third_entry]
+date = new Date(2018, 11, 15)
 
 start()
 
 it 'saves entries', ->
-  subject = new MigraineQC.Month(entries)
+  subject = new MigraineQC.Month({date, entries})
   assert.equal subject.entries, entries
 
-it 'extracts month identifier from entry', ->
-  subject = MigraineQC.Month.identify_month(first_entry)
+it 'extracts month identifier from date', ->
+  subject = MigraineQC.Month.identify_month(date)
   assert.equal subject, '2018-12'
 
 it 'has an identifier', ->
-  subject = new MigraineQC.Month(entries)
+  subject = new MigraineQC.Month({date, entries})
   assert.equal subject.identifier, '2018-12'
 
 it 'has title', ->
-  subject = new MigraineQC.Month(entries)
+  subject = new MigraineQC.Month({date, entries})
   assert.equal subject.title, 'Dec 2018'
 
 it 'has days', ->
-  subject = new MigraineQC.Month(entries)
+  subject = new MigraineQC.Month({date, entries})
   assert.equal subject.days.length, 31
   assert.ok subject.days.every((day) -> day instanceof MigraineQC.Day), 'instance of Day'
 
