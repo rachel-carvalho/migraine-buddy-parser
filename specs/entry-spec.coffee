@@ -79,8 +79,12 @@ it 'handles empty spaces in trigger', ->
 
 it 'only leaves relevant keys in toJSON', ->
   subject = new Entry(entry_no_idea_html).toJSON()
-  assert.equal(Object.keys(subject).length, 10)
-  keys = ['pain_level', 'aura', 'triggers', 'menstruation', 'notes', 'duration', 'medication', 'started_at', 'ended_at', 'pain_position']
-  assert.ok(Object.keys(subject).every((value) -> keys.includes(value)))
+
+  actual = Object.keys(subject)
+  expected = ['pain_level', 'aura', 'triggers', 'menstruation', 'notes', 'duration', 'medication', 'started_at', 'ended_at', 'pain_position', 'days']
+
+  assert.equal(actual.length, 11)
+  assert.ok(actual.every((value) -> expected.includes(value)))
+  assert.ok(expected.every((value) -> actual.includes(value)))
 
 finish()

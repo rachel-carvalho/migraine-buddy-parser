@@ -8,7 +8,7 @@ module.exports =
       @_parse()
 
     toJSON: ->
-      _.pick(this, 'pain_level', 'aura', 'triggers', 'menstruation', 'notes', 'duration', 'medication', 'started_at', 'ended_at', 'pain_position')
+      _.pick(this, 'pain_level', 'aura', 'triggers', 'menstruation', 'notes', 'duration', 'medication', 'started_at', 'ended_at', 'pain_position', 'days')
 
     # private
 
