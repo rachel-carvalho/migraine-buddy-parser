@@ -18,8 +18,7 @@ it 'has entries', ->
   subject = new Report(report_html)
   assert.ok(subject.entries instanceof Array, 'is array')
   assert.ok(subject.entries[0] instanceof Entry, 'first is an entry')
-  assert.equal(subject.entries[0]?.html, first_entry, 'passed entry html to entry')
-  assert.equal(subject.entries.length, 185, 'parsed all entries')
+  assert.equal(subject.entries.length, 195, 'parsed all entries')
 
 it 'only leaves entries in toJSON', ->
   subject = new Report('crazy html').toJSON()
