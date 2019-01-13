@@ -48,9 +48,30 @@ module.exports =
       right: @document('td').eq(9).text().trim().length > 0
 
     _days: ->
+      first_day = new Date(@started_at.getFullYear(), @started_at.getMonth(), @started_at.getDate())
+      last_day = new Date(@ended_at.getFullYear(), @ended_at.getMonth(), @ended_at.getDate())
+
       day = new Date(@started_at.getFullYear(), @started_at.getMonth(), @started_at.getDate())
       days = []
       while day <= @ended_at
-        days.push day
+        days.push {day, first: day.toJSON() == first_day.toJSON(), last: day.toJSON() == last_day.toJSON()}
         day = new Date(day.getFullYear(), day.getMonth(), day.getDate() + 1)
-      days
+
+      return [days[0].day] if days.length == 1
+
+      hours_at_end_of_1st_day = (24 - @started_at.getHours())
+      hours_at_begin_of_last_day = @ended_at.getHours()
+
+      if days.length == 2
+        if @started_at.getHours() >= 20 && hours_at_end_of_1st_day <= hours_at_begin_of_last_day
+          days.shift()
+        else if @ended_at.getHours() <= 4 && hours_at_begin_of_last_day < hours_at_end_of_1st_day
+          days.pop()
+      else
+        if hours_at_end_of_1st_day <= 4 && hours_at_begin_of_last_day <= 4
+          if hours_at_begin_of_last_day < hours_at_end_of_1st_day
+            days.pop()
+          else
+            days.shift()
+
+      days.map (d) -> d.day

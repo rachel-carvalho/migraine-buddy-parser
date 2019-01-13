@@ -58,11 +58,28 @@ it 'calculates end', ->
   subject = first_entry()
   assert.equal subject.ended_at.toJSON(), new Date(2018, 11, 11, 3, 6).toJSON()
 
-it 'calculates days', ->
-  subject = first_entry()
-  assert.equal subject.days.length, 2
-  assert.equal subject.days[0].toJSON(), new Date(2018, 11, 10).toJSON()
-  assert.equal subject.days[1].toJSON(), new Date(2018, 11, 11).toJSON()
+it 'calculates days choosing sleep time over wake time', ->
+  # from 21h to 3h
+  subject = new Entry(first_entry_html)
+  assert.equal subject.days.length, 1, 'keeps second day (from 21h to 3h)'
+  assert.equal subject.days[0].toJSON(), new Date(2018, 11, 11).toJSON(), 'keeps second day (from 21h to 3h)'
+
+  # from 21h to 1h
+  subject = new Entry(first_entry_html.replace('06h', '04h'))
+  assert.equal subject.days.length, 1, 'keeps first day (from 21h to 1h)'
+  assert.equal subject.days[0].toJSON(), new Date(2018, 11, 10).toJSON(), 'keeps first day (from 21h to 1h)'
+
+  # from 21h to 1h of 3rd day
+  subject = new Entry(first_entry_html.replace('06h', '28h'))
+  assert.equal subject.days.length, 2, 'drops 3rd day (from 21h to 1h of 3rd day)'
+  assert.equal subject.days[0].toJSON(), new Date(2018, 11, 10).toJSON(), 'drops 3rd day (from 21h to 1h of 3rd day)'
+  assert.equal subject.days[1].toJSON(), new Date(2018, 11, 11).toJSON(), 'drops 3rd day (from 21h to 1h of 3rd day)'
+
+  # from 21h to 3h of 3rd day
+  subject = new Entry(first_entry_html.replace('06h', '28h').replace('21:06', '23:06'))
+  assert.equal subject.days.length, 2, 'drops 1st day (from 21h to 3h of 3rd day)'
+  assert.equal subject.days[0].toJSON(), new Date(2018, 11, 11).toJSON(), 'drops 1st day (from 21h to 3h of 3rd day)'
+  assert.equal subject.days[1].toJSON(), new Date(2018, 11, 12).toJSON(), 'drops 1st day (from 21h to 3h of 3rd day)'
 
 it 'parses pain position', ->
   subject = first_entry()
