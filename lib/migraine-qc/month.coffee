@@ -22,9 +22,4 @@ module.exports =
 
     _findEntriesOnDay: (date) ->
       next_day = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
-      @entries.filter (entry) ->
-        started_on_day = entry.started_at >= date && entry.started_at < next_day
-        ended_on_day   = entry.ended_at >= date && entry.ended_at < next_day
-        started_before_and_ended_after = entry.started_at <= date && entry.ended_at >= next_day
-
-        started_on_day || ended_on_day || started_before_and_ended_after
+      @entries.filter (entry) -> entry.days.some (day) -> day.toJSON() == date.toJSON()

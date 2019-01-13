@@ -26,6 +26,8 @@ module.exports =
       @ended_at = new Date(@started_at.getFullYear(), @started_at.getMonth(), @started_at.getDate(), @started_at.getHours() + @duration.hours, @started_at.getMinutes() + @duration.minutes)
       @pain_position = @_pain_position()
 
+      @days = @_days()
+
     _all_triggers: ->
       @__all_triggers ||= @document('td').eq(5).text().trim()
 
@@ -44,3 +46,11 @@ module.exports =
     _pain_position: ->
       left: @document('td').eq(8).text().trim().length > 0
       right: @document('td').eq(9).text().trim().length > 0
+
+    _days: ->
+      day = new Date(@started_at.getFullYear(), @started_at.getMonth(), @started_at.getDate())
+      days = []
+      while day <= @ended_at
+        days.push day
+        day = new Date(day.getFullYear(), day.getMonth(), day.getDate() + 1)
+      days
