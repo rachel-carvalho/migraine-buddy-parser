@@ -30,6 +30,11 @@ it 'has title', ->
   subject = new MigraineQC.Month({date, entries})
   assert.equal subject.title, 'Dec 2018'
 
+it 'has triggers', ->
+  subject = new MigraineQC.Month({date, entries})
+  assert.equal subject.triggers.length, 1
+  assert.equal JSON.stringify(subject.triggers), JSON.stringify(['Alcohol'])
+
 it 'has medication', ->
   subject = new MigraineQC.Month({date, entries})
   expected = ['Naproxen sodium 550mg', 'Sumatriptan']

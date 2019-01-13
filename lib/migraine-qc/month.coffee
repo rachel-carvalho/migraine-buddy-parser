@@ -10,6 +10,7 @@ module.exports =
       @identifier = Month.identify_month @date
       @title = @date.toDateString().replace(/^\w{3} /, '').replace(/ \d{1,2} /, ' ')
       @days = @_days(@date)
+      @triggers = @_triggers()
       @medication = @_medication()
 
     # private
@@ -26,10 +27,18 @@ module.exports =
       next_day = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
       @entries.filter (entry) -> entry.days.some (day) -> day.toJSON() == date.toJSON()
 
+    _triggers: ->
+      _.chain(@entries)
+        .map (entry) ->  entry.triggers?[0]?.trim()
+        .compact()
+        .uniq()
+        .sortBy (trigger) -> trigger
+        .value()
+
     _medication: ->
       _.chain(@entries)
         .map (entry) -> entry.medication.map (med) -> med.name.replace(/oral/i, '').trim()
         .flatten()
         .uniq()
-        .sortBy (trigger) -> trigger
+        .sortBy (med) -> med
         .value()
