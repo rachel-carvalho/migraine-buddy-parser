@@ -15,24 +15,27 @@ html
       thead tr { background-color: #fff; }
       th, td { padding: 3px; }
       thead th { background-color: #000; color: #fff; border-color: #000; }
-      th { font-size: smaller; }
+      th, thead h1 { font-size: smaller; }
+      thead h1 { margin: 0; text-align: center; }
 
       tbody td { color: #00c; text-align: center; min-width: 22px }
       tbody th { font-weight: normal; }
       tbody th strong { display: block; }
 
-      .medication, .triggers { font-size: smaller; margin-top: 10px; color: #00c; }
+      section { page-break-inside: avoid; }
+
+      .medication, .triggers { font-size: smaller; margin: 10px 0; color: #00c; }
       .medication strong, .triggers strong { color: #000; }
 
   body
     each month in months
       section(id="month-" + month.identifier)
-        h1= month.title
-
         table
           thead
             tr
               td
+                h1= month.title
+
               each day in month.days
                 th #{day.number()}
 
