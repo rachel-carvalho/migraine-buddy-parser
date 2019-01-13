@@ -29,7 +29,7 @@ module.exports =
 
     _triggers: ->
       _.chain(@entries)
-        .map (entry) ->  entry.triggers?[0]?.trim()
+        .map (entry) -> entry.triggers?[0]?.trim()
         .compact()
         .uniq()
         .sortBy (trigger) -> trigger
