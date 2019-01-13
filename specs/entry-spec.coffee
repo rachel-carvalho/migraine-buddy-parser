@@ -8,6 +8,7 @@ Medication = require '../lib/medication'
 first_entry_html = fs.readFileSync('specs/fixtures/first-entry.html').toString()
 entry_no_idea_html = fs.readFileSync('specs/fixtures/entry_no_idea.html').toString()
 entry_empty_trigger_html = fs.readFileSync('specs/fixtures/entry_empty_trigger.html').toString()
+menstruation_soon_html = fs.readFileSync('specs/fixtures/entry_menstruation_soon.html').toString()
 first_entry = -> new Entry(first_entry_html)
 
 start()
@@ -86,5 +87,11 @@ it 'only leaves relevant keys in toJSON', ->
   assert.equal(actual.length, 11)
   assert.ok(actual.every((value) -> expected.includes(value)))
   assert.ok(expected.every((value) -> actual.includes(value)))
+
+it 'handles menstruation soon', ->
+  subject = new Entry(menstruation_soon_html)
+  assert.equal subject.triggers.length, 1
+  assert.equal subject.triggers[0], 'Sinus'
+  assert.equal subject.menstruation, false
 
 finish()
