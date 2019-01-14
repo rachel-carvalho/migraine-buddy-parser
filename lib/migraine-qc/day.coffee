@@ -2,6 +2,10 @@ _ = require 'underscore'
 
 module.exports =
   class Day
+    @external_menstruation: (date) ->
+      return unless @menstruation_dates?.length
+      @menstruation_dates.includes(JSON.parse(JSON.stringify(date)))
+
     constructor: ({@date, @entries}) ->
 
     number: ->
@@ -21,6 +25,7 @@ module.exports =
       @entries.some (entry) -> entry.aura
 
     menstruation: ->
+      return Day.external_menstruation(@date) if Day.menstruation_dates?.length
       return unless @entries.length
       @entries.some (entry) -> entry.menstruation
 

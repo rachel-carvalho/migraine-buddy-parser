@@ -1,10 +1,14 @@
+fs = require 'fs'
 pug = require 'pug'
 
 Month = require './month'
+Day = require './day'
 
 module.exports =
   class Renderer
     constructor: (@report) ->
+      Day.menstruation_dates = JSON.parse(fs.readFileSync('input/menstruation.json'))
+
       reducer = (all, entry) ->
         days_months = {}
         entry.days.forEach (day) ->

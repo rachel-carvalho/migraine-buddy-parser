@@ -11,7 +11,9 @@ report = new Report(report_html)
 start()
 
 it 'saves report', ->
+  assert.equal MigraineQC.Day.menstruation_dates, undefined, 'no previous external menstruation data'
   subject = new MigraineQC.Renderer(report)
+  assert.ok MigraineQC.Day.menstruation_dates?.length > 0, 'set external menstruation data'
   assert.equal subject.report, report
 
 it 'splits entries per month', ->
