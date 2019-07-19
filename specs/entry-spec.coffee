@@ -36,8 +36,9 @@ it 'parses notes', ->
 it 'parses medication', ->
   subject = first_entry()
   assert.equal subject.medication.length, 2, 'array of 2'
-  assert.ok subject.medication[0] instanceof Medication, 'right type'
-  assert.equal subject.medication[1].name, 'Sumatriptan'
+  assert.ok subject.medication.every((item) -> item instanceof Medication), 'right type'
+  assert.ok subject.medication.some((item) -> item.name == 'Sumatriptan'), 'parsed Sumatriptan'
+  assert.ok subject.medication.some((item) -> item.name.indexOf('Naproxen') > -1), 'parsed Naproxen'
 
 it 'parses triggers', ->
   subject = first_entry()
@@ -46,7 +47,7 @@ it 'parses triggers', ->
 
 it 'parses started_at', ->
   subject = first_entry()
-  assert.equal subject.started_at.toJSON(), new Date(2018, 11, 10, 21, 6).toJSON()
+  assert.equal subject.started_at.toUTC().toJSON(), new Date(2018, 11, 10, 21, 6).toJSON()
 
 it 'parses duration', ->
   subject = first_entry()
@@ -56,30 +57,30 @@ it 'parses duration', ->
 
 it 'calculates end', ->
   subject = first_entry()
-  assert.equal subject.ended_at.toJSON(), new Date(2018, 11, 11, 3, 6).toJSON()
+  assert.equal subject.ended_at.toUTC().toJSON(), new Date(2018, 11, 11, 3, 6).toJSON()
 
 it 'calculates days choosing sleep time over wake time', ->
   # from 21h to 3h
   subject = new Entry(first_entry_html)
   assert.equal subject.days.length, 1, 'keeps second day (from 21h to 3h)'
-  assert.equal subject.days[0].toJSON(), new Date(2018, 11, 11).toJSON(), 'keeps second day (from 21h to 3h)'
+  assert.equal subject.days[0].toUTC().toJSON(), new Date(2018, 11, 11).toJSON(), 'keeps second day (from 21h to 3h)'
 
   # from 21h to 1h
   subject = new Entry(first_entry_html.replace('06h', '04h'))
   assert.equal subject.days.length, 1, 'keeps first day (from 21h to 1h)'
-  assert.equal subject.days[0].toJSON(), new Date(2018, 11, 10).toJSON(), 'keeps first day (from 21h to 1h)'
+  assert.equal subject.days[0].toUTC().toJSON(), new Date(2018, 11, 10).toJSON(), 'keeps first day (from 21h to 1h)'
 
   # from 21h to 1h of 3rd day
   subject = new Entry(first_entry_html.replace('06h', '28h'))
   assert.equal subject.days.length, 2, 'drops 3rd day (from 21h to 1h of 3rd day)'
-  assert.equal subject.days[0].toJSON(), new Date(2018, 11, 10).toJSON(), 'drops 3rd day (from 21h to 1h of 3rd day)'
-  assert.equal subject.days[1].toJSON(), new Date(2018, 11, 11).toJSON(), 'drops 3rd day (from 21h to 1h of 3rd day)'
+  assert.equal subject.days[0].toUTC().toJSON(), new Date(2018, 11, 10).toJSON(), 'drops 3rd day (from 21h to 1h of 3rd day)'
+  assert.equal subject.days[1].toUTC().toJSON(), new Date(2018, 11, 11).toJSON(), 'drops 3rd day (from 21h to 1h of 3rd day)'
 
   # from 21h to 3h of 3rd day
   subject = new Entry(first_entry_html.replace('06h', '28h').replace('21:06', '23:06'))
   assert.equal subject.days.length, 2, 'drops 1st day (from 21h to 3h of 3rd day)'
-  assert.equal subject.days[0].toJSON(), new Date(2018, 11, 11).toJSON(), 'drops 1st day (from 21h to 3h of 3rd day)'
-  assert.equal subject.days[1].toJSON(), new Date(2018, 11, 12).toJSON(), 'drops 1st day (from 21h to 3h of 3rd day)'
+  assert.equal subject.days[0].toUTC().toJSON(), new Date(2018, 11, 11).toJSON(), 'drops 1st day (from 21h to 3h of 3rd day)'
+  assert.equal subject.days[1].toUTC().toJSON(), new Date(2018, 11, 12).toJSON(), 'drops 1st day (from 21h to 3h of 3rd day)'
 
 it 'parses pain position', ->
   subject = first_entry()
