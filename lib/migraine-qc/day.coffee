@@ -9,7 +9,7 @@ module.exports =
     constructor: ({@date, @entries}) ->
 
     number: ->
-      @date.getDate()
+      @date.day
 
     pain: ->
       return unless @entries.length

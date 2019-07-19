@@ -46,8 +46,8 @@ it 'has trigger', ->
 it 'has medications', ->
   subject = new MigraineQC.Day({date, entries})
   assert.equal subject.medications().length, 2
-  assert.equal subject.medications()[0], 'Naproxen sodium 550mg Oral'
-  assert.equal subject.medications()[1], 'Sumatriptan'
+  assert.equal subject.medications()[0], 'Sumatriptan'
+  assert.equal subject.medications()[1], 'Naproxen sodium 550mg Oral'
 
 it 'has effectiveness', ->
   subject = new MigraineQC.Day({date, entries})
@@ -68,8 +68,8 @@ it 'shows first 3 medications', ->
   first_entry.medication.push new Medication(name: 'Tylenol')
   subject = new MigraineQC.Day({date, entries})
   assert.equal subject.medications().length, 3
-  assert.equal subject.medications()[0], 'Naproxen sodium 550mg Oral'
-  assert.equal subject.medications()[1], 'Sumatriptan'
+  assert.equal subject.medications()[0], 'Sumatriptan'
+  assert.equal subject.medications()[1], 'Naproxen sodium 550mg Oral'
   assert.equal subject.medications()[2], 'Advil'
 
 it 'uses max pain level between entries', ->
@@ -102,9 +102,10 @@ it 'joins medications', ->
   second_entry.medication = [new Medication(name: 'Novalgin'), new Medication(name: 'Tylenol')]
   subject = new MigraineQC.Day({date, entries})
   assert.equal subject.medications().length, 3
-  assert.equal subject.medications()[0], 'Naproxen sodium 550mg Oral'
-  assert.equal subject.medications()[1], 'Sumatriptan'
-  assert.equal subject.medications()[2], 'Novalgin'
+  medications = subject.medications().sort()
+  assert.equal medications[0], 'Naproxen sodium 550mg Oral'
+  assert.equal medications[1], 'Novalgin'
+  assert.equal medications[2], 'Sumatriptan'
 
 it 'returns undefined for all methods when there are no entries', ->
   subject = new MigraineQC.Day({date, entries: []})

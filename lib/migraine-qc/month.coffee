@@ -1,14 +1,15 @@
 _ = require 'underscore'
 Day = require './day'
+{DateTime} = require 'luxon'
 
 module.exports =
   class Month
     @identify_month: (date) ->
-      "#{date.getFullYear()}-#{date.getMonth() + 1}"
+      "#{date.year}-#{date.month}"
 
     constructor: ({@date, @entries}) ->
       @identifier = Month.identify_month @date
-      @title = @date.toDateString().replace(/^\w{3} /, '').replace(/ \d{1,2} /, ' ')
+      @title = @date.toFormat 'MMM yyyy'
       @days = @_days(@date)
       @triggers = @_triggers()
       @medication = @_medication()
@@ -16,15 +17,15 @@ module.exports =
     # private
 
     _days: (reference) ->
-      first_day = new Date(reference.getFullYear(), reference.getMonth(), 1)
-      last_day = new Date(reference.getFullYear(), reference.getMonth() + 1, 0)
+      first_day = reference.startOf 'month'
+      last_day = reference.endOf('month').startOf 'day'
 
-      [first_day.getDate()..last_day.getDate()].map (day_number) =>
-        date = new Date(reference.getFullYear(), reference.getMonth(), day_number)
+      [first_day.day..last_day.day].map (day_number) =>
+        date = DateTime.local(reference.year, reference.month, day_number)
         new Day(date: date, entries: @_findEntriesOnDay(date))
 
     _findEntriesOnDay: (date) ->
-      next_day = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
+      next_day = date.plus day: 1
       @entries.filter (entry) -> entry.days.some (day) -> day.toJSON() == date.toJSON()
 
     _triggers: ->

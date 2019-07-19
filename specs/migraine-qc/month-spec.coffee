@@ -1,16 +1,17 @@
 { start, it, finish } = require '../support/support'
 fs = require 'fs'
 assert = require 'assert'
+{DateTime} = require 'luxon'
 
 MigraineQC = require '../../lib/migraine-qc'
 Entry = require '../../lib/entry'
 
 first_entry_html = fs.readFileSync('specs/fixtures/first-entry.html').toString()
 first_entry = new Entry(first_entry_html)
-second_entry = new Entry(first_entry_html.replace('12/10/18 21:06', '12/5/18 12:15'))
-third_entry = new Entry(first_entry_html.replace('12/10/18', '12/20/18').replace('06h 00m', '30h 00m'))
+second_entry = new Entry(first_entry_html.replace('10/12/18 21:06', '05/12/18 12:15'))
+third_entry = new Entry(first_entry_html.replace('10/12/18', '20/12/18').replace('06h 00m', '30h 00m'))
 entries = [first_entry, second_entry, third_entry]
-date = new Date(2018, 11, 15)
+date = DateTime.local(2018, 12, 15)
 
 start()
 
@@ -48,10 +49,8 @@ it 'has days', ->
   assert.ok subject.days.every((day) -> day instanceof MigraineQC.Day), 'instance of Day'
 
   dates_with_entries =
-    10: first_entry
-    11: first_entry
     5: second_entry
-    20: third_entry
+    11: first_entry
     21: third_entry
     22: third_entry
 
