@@ -26,7 +26,7 @@ it 'splits entries per month', ->
   assert.equal subject.months[0].days.length, 31, 'days in december'
 
   assert.equal subject.months[1].identifier, '2018-11'
-  assert.equal subject.months[1].entries.length, 8, 'entries in november'
+  assert.equal subject.months[1].entries.length, 7, 'entries in november'
   assert.equal subject.months[1].days.length, 30, 'days in november'
 
   assert.equal subject.months[2].identifier, '2018-10'

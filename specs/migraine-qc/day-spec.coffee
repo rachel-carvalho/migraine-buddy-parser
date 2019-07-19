@@ -1,6 +1,7 @@
 { start, it, finish } = require '../support/support'
 fs = require 'fs'
 assert = require 'assert'
+{DateTime} = require 'luxon'
 
 MigraineQC = require '../../lib/migraine-qc'
 Medication = require '../../lib/medication'
@@ -10,7 +11,7 @@ first_entry_html = fs.readFileSync('specs/fixtures/first-entry.html').toString()
 first_entry = new Entry(first_entry_html.replace('21:06', '10:06'))
 second_entry = new Entry(first_entry_html.replace('"> 5 </td>', '"> 7 </td>'))
 
-date = new Date(2018, 11, 10)
+date = DateTime.local(2018, 12, 10)
 entries = [first_entry]
 
 start()

@@ -1,5 +1,6 @@
 fs = require 'fs'
 pug = require 'pug'
+{DateTime} = require 'luxon'
 
 Month = require './month'
 Day = require './day'
@@ -23,7 +24,7 @@ module.exports =
 
       @months = Object.keys(per_month).map (full_month) ->
         [year, month] = full_month.split('-')
-        new Month(date: new Date(year, parseInt(month) - 1), entries: per_month[full_month])
+        new Month(date: DateTime.local(parseInt(year), parseInt(month)), entries: per_month[full_month])
 
       @render_html = pug.compileFile('templates/calendar.pug')
 

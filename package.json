@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "coffee main.coffee",
-    "mocha": "coffee"
+    "mocha": "coffee",
+    "test": "find . -name '*spec.coffee' -exec coffee {} \\; -print"
   },
   "dependencies": {
     "assert": "^1.4.1",
