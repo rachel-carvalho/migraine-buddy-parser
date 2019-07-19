@@ -4,7 +4,7 @@ module.exports =
   class Day
     @external_menstruation: (date) ->
       return unless @menstruation_dates?.length
-      @menstruation_dates.includes(JSON.parse(JSON.stringify(date)))
+      @menstruation_dates.includes(JSON.parse(JSON.stringify(date.startOf('day').toJSDate())))
 
     constructor: ({@date, @entries}) ->
 

@@ -118,23 +118,23 @@ it 'returns undefined for all methods when there are no entries', ->
   assert.equal subject.effective(), undefined, 'effective'
 
 it 'checks external menstruation data', ->
-  subject = MigraineQC.Day.external_menstruation(new Date(2019, 0, 8))
+  subject = MigraineQC.Day.external_menstruation(DateTime.local(2019, 1, 8))
   assert.equal subject, undefined
 
   MigraineQC.Day.menstruation_dates = JSON.parse(fs.readFileSync('input/menstruation.json'))
-  subject = MigraineQC.Day.external_menstruation(new Date(2019, 0, 8))
+  subject = MigraineQC.Day.external_menstruation(DateTime.local(2019, 1, 8))
   assert.equal subject, true
 
 it 'uses external menstruation data', ->
   MigraineQC.Day.menstruation_dates = JSON.parse(fs.readFileSync('input/menstruation.json'))
-  subject = new MigraineQC.Day(date: new Date(2019, 0, 8), entries: [])
+  subject = new MigraineQC.Day(date: DateTime.local(2019, 1, 8), entries: [])
   assert.equal subject.menstruation(), true
 
   first_entry.menstruation = false
-  subject = new MigraineQC.Day(date: new Date(2019, 0, 8), entries: [first_entry])
+  subject = new MigraineQC.Day(date: DateTime.local(2019, 1, 8), entries: [first_entry])
   assert.equal subject.menstruation(), true
 
-  subject = new MigraineQC.Day(date: new Date(2019, 0, 11), entries: [first_entry])
+  subject = new MigraineQC.Day(date: DateTime.local(2019, 1, 11), entries: [first_entry])
   assert.equal subject.menstruation(), false
 
 finish()
