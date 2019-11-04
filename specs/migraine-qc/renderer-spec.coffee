@@ -54,4 +54,10 @@ it 'renders html', ->
   assert.ok subject.includes('id="month-2018-8"'), 'august month div'
   assert.ok subject.includes('Aug 2018'), 'august month text'
 
+it 'does not render empty trigger list', ->
+  subject = new MigraineQC.Renderer(report).render()
+  subject = subject.replace /\<\/?strong\>/g, ''
+  assert.ok /Déclencheurs: \w*(,?\s?\w*)*\./.test(subject), 'lists trigger names'
+  assert.equal subject.includes('Déclencheurs: .'), false, 'does not create empty trigger list'
+
 finish()

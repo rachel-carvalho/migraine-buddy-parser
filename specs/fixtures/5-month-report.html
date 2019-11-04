@@ -6,247 +6,246 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
   <title>Migraine Listing</title>
   <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+        color: #3f798c;
+        font-family: 'Asap', sans-serif;
+    }
 
-* {
-    padding: 0;
-    margin: 0;
-    color: #3f798c;
-    font-family: 'Asap', sans-serif;
-}
+    .normal-weight {
+        font-weight: normal;
+    }
 
-.normal-weight {
-    font-weight: normal;
-}
+    .main-header {
+        margin: 1em auto 0 auto;
+        max-width: 1024px;
+        box-sizing: border-box;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: flex-start;
+    }
 
-.main-header {
-    margin: 1em auto 0 auto;
-    max-width: 1024px;
-    box-sizing: border-box;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: flex-start;
-}
+    header img {
+        vertical-align: middle;
+    }
 
-header img {
-    vertical-align: middle;
-}
+    /* Legend */
+    .main-header .icon {
+        margin: auto 0px;
+    }
 
-/* Legend */
-.main-header .icon {
-    margin: auto 0px;
-}
+    .main-header img {
+        vertical-align: middle;
+        padding-right: 50px;
+    }
 
-.main-header img {
-    vertical-align: middle;
-    padding-right: 50px;
-}
+    /* Table CSS */
 
-/* Table CSS */
+    #overview {
+        max-width: 400px;
+        margin: 1em auto 0 auto;
+        padding:10px;
 
-#overview {
-    max-width: 400px;
-    margin: 1em auto 0 auto;
-    padding:10px;
+        -moz-border-radius-bottomleft:3px;
+        border-bottom-left-radius:3px;
 
-    -moz-border-radius-bottomleft:3px;
-    border-bottom-left-radius:3px;
+        -moz-border-radius-bottomright:3px;
+        border-bottom-right-radius:3px;
 
-    -moz-border-radius-bottomright:3px;
-    border-bottom-right-radius:3px;
+        -moz-border-radius-topright:3px;
+        border-top-right-radius:3px;
 
-    -moz-border-radius-topright:3px;
-    border-top-right-radius:3px;
+        -moz-border-radius-topleft:3px;
+        border-top-left-radius:3px;
 
-    -moz-border-radius-topleft:3px;
-    border-top-left-radius:3px;
-
-    -webkit-print-color-adjust: exact;
-}
-
-
-#overview table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width:100%;
-    margin:0px;
-    padding:0px;
-    border:1px solid #c3d8d8;
-    background-color:#ffffff;
-}
-
-#overview tr {
-    width: 100%;
-}
-
-#overview td {
-    vertical-align:middle;
-    border:1px solid #c3d8d8;
-    border-width:0px 1px 1px 0px;
-    text-align:center;
-    padding:4px;
-    font-size:12px;
-    color:#0b2730;
-    max-width: 150px;
-}
-
-#overview right-border {
-    border-width:0px 1px 0px 0px;
-}
-
-#overview bottom-border {
-    border-width:0px 0px 1px 0px;
-}
-
-#overview bottom-left-border {
-    border-width:0px 0px 1px 1px;
-}
-
-#overview .header-overview td {
-    background-color:#3f798c;
-    border:0px solid #c3d8d8;
-    text-align:center;
-    font-size:12px;
-    border-width:0px 0px 1px 1px;
-    font-weight:bold;
-    color:#ffffff;
-}
-
-#overview tbody tr {
-    height: 0px;
-}
+        -webkit-print-color-adjust: exact;
+    }
 
 
+    #overview table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width:100%;
+        margin:0px;
+        padding:0px;
+        border:1px solid #c3d8d8;
+        background-color:#ffffff;
+    }
 
-.reports-table {
-    margin: 1em auto 0 auto;
-    padding:10px;
-    min-width: 1024px;
-    width: 85%;
+    #overview tr {
+        width: 100%;
+    }
 
-    -moz-border-radius-bottomleft:3px;
-    border-bottom-left-radius:3px;
+    #overview td {
+        vertical-align:middle;
+        border:1px solid #c3d8d8;
+        border-width:0px 1px 1px 0px;
+        text-align:center;
+        padding:4px;
+        font-size:12px;
+        color:#0b2730;
+        max-width: 150px;
+    }
 
-    -moz-border-radius-bottomright:3px;
-    border-bottom-right-radius:3px;
+    #overview right-border {
+        border-width:0px 1px 0px 0px;
+    }
 
-    -moz-border-radius-topright:3px;
-    border-top-right-radius:3px;
+    #overview bottom-border {
+        border-width:0px 0px 1px 0px;
+    }
 
-    -moz-border-radius-topleft:3px;
-    border-top-left-radius:3px;
+    #overview bottom-left-border {
+        border-width:0px 0px 1px 1px;
+    }
 
-    -webkit-print-color-adjust: exact;
-}
+    #overview .header-overview td {
+        background-color:#3f798c;
+        border:0px solid #c3d8d8;
+        text-align:center;
+        font-size:12px;
+        border-width:0px 0px 1px 1px;
+        font-weight:bold;
+        color:#ffffff;
+    }
 
-
-.reports-table table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width:100%;
-    margin:0px;
-    padding:0px;
-    /* border: 1px solid #c3d8d8; */
-    background-color:#ffffff;
-}
-
-.reports-table.fixed table {
-    table-layout: fixed;
-    word-wrap: break-word;
-    word-break: break-all;
-}
-
-.reports-table tr {
-    width: 100%;
-}
-
-.reports-table td {
-    vertical-align:middle;
-    border:1px solid #c3d8d8;
-    /* border-width:0px 1px 1px 0px; */
-    border-width:1px 1px 1px 1px;
-    text-align:center;
-    padding:4px;
-    font-size:12px;
-    color:#0b2730;
-    max-width: 150px;
-}
-
-.reports-table right-border {
-    border-width:0px 1px 0px 0px;
-}
-
-.reports-table bottom-border {
-    border-width:0px 0px 1px 0px;
-}
-
-.reports-table bottom-left-border {
-    border-width:0px 0px 1px 1px;
-}
-
-.reports-table .header td {
-    background-color:#3f798c;
-    border:0px solid #c3d8d8;
-    text-align:center;
-    font-size:12px;
-    border-width:0px 0px 1px 1px;
-    font-weight:bold;
-    color:#ffffff;
-}
-
-.reports-table thead subheading{
-    background-color:#5fa6be;
-}
-
-.reports-table thead subheading td{
-    color:#fff;
-}
-
-.reports-table tbody tr {
-    height: 0px;
-}
-
-.reports-table tr td div.helpful{
-    color:#02921a;
-}
-
-.reports-info {
-    margin: 1em auto 0 auto;
-    padding:10px;
-    min-width: 1024px;
-    width: 85%;
-}
-
-.notes {
-    text-align: left !important;
-    padding-bottom: 15px !important;
-}
-
-pre {
-    white-space: pre-wrap;
-}
-
-.relief-methods {
-    margin-top : 10px;
-}
-
-#printButton button {
-    border: none;
-    background: none;
-}
-
-
-@media print {
-table { page-break-inside: auto; }
-tr    { page-break-inside: avoid; page-break-after: auto; }
-thead { display: table-header-group; }
-#printButton { display: none; }
-@page { size: landscape }
-}
+    #overview tbody tr {
+        height: 0px;
+    }
 
 
 
-</style>
+    .reports-table {
+        margin: 1em auto 0 auto;
+        padding:10px;
+        min-width: 1024px;
+        width: 85%;
+
+        -moz-border-radius-bottomleft:3px;
+        border-bottom-left-radius:3px;
+
+        -moz-border-radius-bottomright:3px;
+        border-bottom-right-radius:3px;
+
+        -moz-border-radius-topright:3px;
+        border-top-right-radius:3px;
+
+        -moz-border-radius-topleft:3px;
+        border-top-left-radius:3px;
+
+        -webkit-print-color-adjust: exact;
+    }
+
+
+    .reports-table table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width:100%;
+        margin:0px;
+        padding:0px;
+        /* border: 1px solid #c3d8d8; */
+        background-color:#ffffff;
+    }
+
+    .reports-table.fixed table {
+        table-layout: fixed;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    .reports-table tr {
+        width: 100%;
+    }
+
+    .reports-table td {
+        vertical-align:middle;
+        border:1px solid #c3d8d8;
+        /* border-width:0px 1px 1px 0px; */
+        border-width:1px 1px 1px 1px;
+        text-align:center;
+        padding:4px;
+        font-size:12px;
+        color:#0b2730;
+        max-width: 150px;
+    }
+
+    .reports-table right-border {
+        border-width:0px 1px 0px 0px;
+    }
+
+    .reports-table bottom-border {
+        border-width:0px 0px 1px 0px;
+    }
+
+    .reports-table bottom-left-border {
+        border-width:0px 0px 1px 1px;
+    }
+
+    .reports-table .header td {
+        background-color:#3f798c;
+        border:0px solid #c3d8d8;
+        text-align:center;
+        font-size:12px;
+        border-width:0px 0px 1px 1px;
+        font-weight:bold;
+        color:#ffffff;
+    }
+
+    .reports-table thead subheading{
+        background-color:#5fa6be;
+    }
+
+    .reports-table thead subheading td{
+        color:#fff;
+    }
+
+    .reports-table tbody tr {
+        height: 0px;
+    }
+
+    .reports-table tr td div.helpful{
+        color:#02921a;
+    }
+
+    .reports-info {
+        margin: 1em auto 0 auto;
+        padding:10px;
+        min-width: 1024px;
+        width: 85%;
+    }
+
+    .notes {
+        text-align: left !important;
+        padding-bottom: 15px !important;
+    }
+
+    pre {
+        white-space: pre-wrap;
+    }
+
+    .relief-methods {
+        margin-top : 10px;
+    }
+
+    #printButton button {
+        border: none;
+        background: none;
+    }
+
+
+    @media print {
+    table { page-break-inside: auto; }
+    tr    { page-break-inside: avoid; page-break-after: auto; }
+    thead { display: table-header-group; }
+    #printButton { display: none; }
+    @page { size: landscape }
+    }
+
+
+
+  </style>
   <link href="https://fonts.googleapis.com/css?family=Asap:400,400italic,700,700italic" rel="stylesheet" type="text/css">
   <style>
 		</style>
@@ -369,7 +368,7 @@ thead { display: table-header-group; }
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Woke up during sleep </td>
-      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Alcohol <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Worse pain if moving, Throbbing pain </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
@@ -400,7 +399,7 @@ thead { display: table-header-group; }
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at home] </td>
-      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Rebound headache, Alcohol <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Worse pain if moving, Throbbing pain </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
@@ -434,7 +433,7 @@ thead { display: table-header-group; }
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Woke up during sleep </td>
-      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Dehydration, Sinus <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Worse pain if moving, Worse lying down </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Eye, Left Temple </td>
@@ -466,7 +465,7 @@ Dec 9, 2018 at 09:39: This symptom stopped:  headache (I woke up without it)</pr
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Not affected </td>
-      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Rebound headache, Alcohol <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Worse pain if moving, Pounding pain </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
@@ -497,7 +496,7 @@ Dec 9, 2018 at 09:39: This symptom stopped:  headache (I woke up without it)</pr
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 4 </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Slower [at work] </td>
-      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Dehydration, Sinus <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Throbbing pain </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
@@ -535,7 +534,7 @@ Nov 22, 2018 at 11:04 AM no more symptoms?</pre> </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> 5 </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Missed family time </td>
-      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No idea </td>
+      <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Alcohol <br style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif"> Menstruation: Yes </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Sensitivity to light, Worse pain if moving </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> No </td>
       <td style=";padding:0;margin:0;color:rgb(63, 121, 140);font-family:&quot;Asap&quot;, sans-serif;vertical-align:middle;border:1px solid rgb(195, 216, 216);border-width:1px 1px 1px 1px;text-align:center;padding:4px;font-size:12px;color:rgb(11, 39, 48);max-width:150px"> Left Temple </td>
@@ -1339,7 +1338,7 @@ Aug 3, 2018 at 7:00 PM: Pain increased to level:  9
 Aug 3, 2018 at 8:00 PM: vomit, didn’t help
 Aug 3, 2018 at 8:54 PM: took tylenol and advil
 Aug 4, 2018 at 4:31 AM: Headache ended(?) during sleep</pre> </td>
-     </tr> 
+     </tr>
     </tbody>
    </table>
   </div>

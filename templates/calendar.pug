@@ -92,6 +92,7 @@ html
           strong Traitements:
           = ' ' + month.medication.join(', ') + '.'
 
-        p.triggers
-          strong Déclencheurs:
-          = ' ' + month.triggers.join(', ') + '.'
+        if month.triggers.length > 0
+          p.triggers
+            strong Déclencheurs:
+            = ' ' + month.triggers.join(', ') + '.'
