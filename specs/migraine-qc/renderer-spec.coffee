@@ -16,30 +16,30 @@ it 'saves report', ->
   assert.ok MigraineQC.Day.menstruation_dates?.length > 0, 'set external menstruation data'
   assert.equal subject.report, report
 
-it 'splits entries per month', ->
+it 'splits entries per month sorted asc', ->
   subject = new MigraineQC.Renderer(report)
   assert.equal subject.months.length, 5
   assert.ok subject.months.every (month) -> month instanceof MigraineQC.Month
 
-  assert.equal subject.months[0].identifier, '2018-12'
-  assert.equal subject.months[0].entries.length, 3, 'entries in december'
-  assert.equal subject.months[0].days.length, 31, 'days in december'
+  assert.equal subject.months[0].identifier, '2018-8'
+  assert.equal subject.months[0].entries.length, 8, 'entries in august'
+  assert.equal subject.months[0].days.length, 31, 'days in august'
 
-  assert.equal subject.months[1].identifier, '2018-11'
-  assert.equal subject.months[1].entries.length, 7, 'entries in november'
-  assert.equal subject.months[1].days.length, 30, 'days in november'
+  assert.equal subject.months[1].identifier, '2018-9'
+  assert.equal subject.months[1].entries.length, 5, 'entries in september'
+  assert.equal subject.months[1].days.length, 30, 'days in september'
 
   assert.equal subject.months[2].identifier, '2018-10'
   assert.equal subject.months[2].entries.length, 6, 'entries in october'
   assert.equal subject.months[2].days.length, 31, 'days in october'
 
-  assert.equal subject.months[3].identifier, '2018-9'
-  assert.equal subject.months[3].entries.length, 5, 'entries in september'
-  assert.equal subject.months[3].days.length, 30, 'days in september'
+  assert.equal subject.months[3].identifier, '2018-11'
+  assert.equal subject.months[3].entries.length, 7, 'entries in november'
+  assert.equal subject.months[3].days.length, 30, 'days in november'
 
-  assert.equal subject.months[4].identifier, '2018-8'
-  assert.equal subject.months[4].entries.length, 8, 'entries in august'
-  assert.equal subject.months[4].days.length, 31, 'days in august'
+  assert.equal subject.months[4].identifier, '2018-12'
+  assert.equal subject.months[4].entries.length, 3, 'entries in december'
+  assert.equal subject.months[4].days.length, 31, 'days in december'
 
 it 'renders html', ->
   subject = new MigraineQC.Renderer(report).render()

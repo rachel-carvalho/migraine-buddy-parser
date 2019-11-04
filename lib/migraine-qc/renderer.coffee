@@ -26,6 +26,8 @@ module.exports =
         [year, month] = full_month.split('-')
         new Month(date: DateTime.local(parseInt(year), parseInt(month)), entries: per_month[full_month])
 
+      @months.sort (a, b) -> a.date - b.date
+
       @render_html = pug.compileFile('templates/calendar.pug')
 
     render: ->
