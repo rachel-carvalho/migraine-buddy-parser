@@ -16,13 +16,13 @@ module.exports =
     _parse: ->
       @document = cheerio.load('<tr>' + @html + '</tr>', null, false)
 
-      @pain_level = parseInt(@document('td').eq(4).text().trim())
-      @aura = @document('td').eq(8).text().trim().toLowerCase() == 'yes'
+      @pain_level = parseInt(@document('td').eq(3).text().trim())
+      @aura = @document('td').eq(7).text().trim().toLowerCase() == 'yes'
       @triggers = @_triggers()
-      @menstruation = @_all_triggers().toLowerCase().indexOf('menstruation: yes') > -1
+      @menstruation = @_all_triggers().toLowerCase().indexOf('period: yes') > -1
       @notes = @document('td').last().text().trim().substring 'Notes: '.length
       @duration = @_duration()
-      @medication = Medication.parse(@document('td').eq(11).html())
+      @medication = Medication.parse(@document('td').eq(10).html())
       @started_at = DateTime.fromFormat(@document('td').eq(1).find('div span').text().trim(), 'dd/MM/yy HH:mm')
       @ended_at = @started_at.plus hours: @duration.hours, minutes: @duration.minutes
       @pain_position = @_pain_position()
@@ -30,10 +30,10 @@ module.exports =
       @days = @_days()
 
     _all_triggers: ->
-      @__all_triggers ||= @document('td').eq(6).text().trim()
+      @__all_triggers ||= @document('td').eq(5).text().trim()
 
     _triggers: ->
-      triggers = @_all_triggers().replace(/menstruation: (yes|no|soon)/i, '').replace(/no idea/i, '')
+      triggers = @_all_triggers().replace(/period: (yes|no|soon)/i, '').replace(/no idea/i, '')
       _.compact(triggers.split(',').map (trigger) -> trigger.trim())
 
     _duration: ->
@@ -45,8 +45,8 @@ module.exports =
       formatted: duration_text
 
     _pain_position: ->
-      left: @document('td').eq(9).text().trim().length > 0
-      right: @document('td').eq(10).text().trim().length > 0
+      left: @document('td').eq(8).text().trim().length > 0
+      right: @document('td').eq(9).text().trim().length > 0
 
     _days: ->
       first_day = @started_at.startOf 'day'
