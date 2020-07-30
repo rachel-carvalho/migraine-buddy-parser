@@ -12,11 +12,11 @@
     "test": "find . -name '*spec.coffee' -exec coffee {} \\; -print"
   },
   "dependencies": {
-    "assert": "^1.4.1",
-    "cheerio": "^1.0.0-rc.2",
-    "coffeescript": "^2.3.2",
-    "luxon": "^1.17.1",
-    "pug": "^2.0.3",
-    "underscore": "^1.9.1"
+    "assert": "^1.5.0",
+    "cheerio": "^1.0.0-rc.3",
+    "coffeescript": "^2.5.1",
+    "luxon": "^1.24.1",
+    "pug": "^2.0.4",
+    "underscore": "^1.10.2"
   }
 }
