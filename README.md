@@ -6,10 +6,7 @@ Parser for [Migraine Buddy](https://migrainebuddy.com/)'s exported report html w
 ### 1. Export report HTML from app
 Go to the app and export data "For my doctor" for whatever period you wish, including notes and health events as a "Web Link".
 
-![Screenshot: app menu](docs/app-1-menu.png)
-![Screenshot: period selection](docs/app-2-dates.png)
-![Screenshot: entry attribute selection](docs/app-3-attributes.png)
-![Screenshot: export as Web Link](docs/app-3-export.png)
+<img src="docs/app-1-menu.png" alt="Screenshot: app menu" title="Screenshot: app menu" width="200"> <img src="docs/app-2-dates.png" alt="Screenshot: period selection" title="Screenshot: period selection" width="200"> <img src="docs/app-3-attributes.png" alt="Screenshot: entry attribute selection" title="Screenshot: entry attribute selection" width="200"> <img src="docs/app-4-export.png" alt="Screenshot: export as Web Link" title="Screenshot: export as Web Link" width="200">
 
 Save the page HTML into Migraine Buddy Parser's `input` folder.
 ```bash
