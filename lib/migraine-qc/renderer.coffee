@@ -8,7 +8,7 @@ Day = require './day'
 module.exports =
   class Renderer
     constructor: (@report) ->
-      Day.menstruation_dates = JSON.parse(fs.readFileSync('input/menstruation.json'))
+      Day.menstruation_dates = @menstruation()
 
       reducer = (all, entry) ->
         days_months = {}
@@ -29,6 +29,11 @@ module.exports =
       @months.sort (a, b) -> a.date - b.date
 
       @render_html = pug.compileFile('templates/calendar.pug')
+
+    menstruation: ->
+      menstruation_path = 'input/menstruation.json'
+      return [] unless fs.existsSync(menstruation_path)
+      JSON.parse(fs.readFileSync(menstruation_path))
 
     render: ->
       @render_html({@months})
