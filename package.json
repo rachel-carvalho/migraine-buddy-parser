@@ -16,7 +16,7 @@
     "cheerio": "^1.0.0-rc.3",
     "coffeescript": "^2.5.1",
     "luxon": "^1.24.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "underscore": "^1.10.2"
   }
 }
