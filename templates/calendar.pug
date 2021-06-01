@@ -24,8 +24,8 @@ html
 
       section { page-break-inside: avoid; }
 
-      .medication, .triggers { font-size: smaller; margin: 10px 0; color: #00c; }
-      .medication strong, .triggers strong { color: #000; }
+      .medication, .triggers, .days_per_month { font-size: smaller; margin: 10px 0; color: #00c; }
+      .medication strong, .triggers strong, .days_per_month strong { color: #000; }
 
   body
     each month in months
@@ -34,7 +34,7 @@ html
           thead
             tr
               td
-                h1= month.title
+                h1 #{month.title}
 
               each day in month.days
                 th #{day.number()}
@@ -96,3 +96,8 @@ html
           p.triggers
             strong Déclencheurs:
             = ' ' + month.triggers.join(', ') + '.'
+
+        p.days_per_month
+          strong Days per month:
+          = ' ' + month.entries.length.toString() + ' / ' + month.days.length.toString()
+          = ' (' + (Math.round(month.entries.length / month.days.length * 10000) / 100).toString() + '%)'
