@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "assert": "^1.5.0",
-    "cheerio": "^1.0.0-rc.3",
+    "cheerio": "^1.0.0-rc.10",
     "coffeescript": "^2.5.1",
     "luxon": "^1.24.1",
     "pug": "^3.0.2",

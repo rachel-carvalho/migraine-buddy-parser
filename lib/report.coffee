@@ -16,8 +16,8 @@ class Report
     @document = cheerio.load @html
     trs = @document('.reports-table tbody tr')
 
-    [notes, data] = _.partition trs, (tr) -> cheerio(tr).find('.notes').length > 0
+    [notes, data] = _.partition trs, (tr) => @document(tr).find('.notes').length > 0
 
-    @entries = data.map (tr, index) ->
-      html = cheerio(tr).html() + cheerio(notes[index]).html()
+    @entries = data.map (tr, index) =>
+      html = @document(tr).html() + @document(notes[index]).html()
       new Entry(html)

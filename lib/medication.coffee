@@ -11,7 +11,7 @@ module.exports =
       mapping = [['helpful - ', true], ['unhelpful - ', false], ['unsure - '], ['somewhat helpful - ']]
 
       _.flatten classifications.toArray().map (classification) ->
-        text = cheerio(classification).text().trim()
+        text = document(classification).text().trim()
         return [] if text.toLowerCase() == 'no medication'
 
         [label, helpful] = mapping.find((m) -> text.toLowerCase().indexOf(m[0]) == 0)
