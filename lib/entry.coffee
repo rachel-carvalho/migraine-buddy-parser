@@ -23,7 +23,7 @@ module.exports =
       @notes = @document('td').last().text().trim().substring 'Notes: '.length
       @duration = @_duration()
       @medication = Medication.parse(@document('td').eq(10).html())
-      @started_at = DateTime.fromFormat(@document('td').eq(1).find('div span').text().trim(), 'dd/MM/yy HH:mm')
+      @started_at = DateTime.fromFormat(@document('td').eq(1).find('div span').first().text().trim(), 'dd/MM/yy HH:mm')
       @ended_at = @started_at.plus hours: @duration.hours, minutes: @duration.minutes
       @pain_position = @_pain_position()
 
@@ -37,7 +37,7 @@ module.exports =
       _.compact(triggers.split(',').map (trigger) -> trigger.trim())
 
     _duration: ->
-      duration_text = @document('td').eq(2).text().trim()
+      duration_text = @document('td').eq(1).find('div span').eq(2).text().trim()
       [..., hours, minutes] = duration_text.match(/(\d+)h (\d+)m/i)
 
       hours: parseInt(hours)
